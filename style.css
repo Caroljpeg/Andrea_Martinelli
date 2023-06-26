@@ -1,12 +1,193 @@
-html, body {
+.col-1 {width:8.33%}
+.col-2 {width:16.66%}
+.col-3 {width:25%}
+.col-4 {width:33.33%}
+.col-5 {width:41.66%}
+.col-6 {width:50%}
+.col-7 {width:58.33%}
+.col-8 {width:66.66%}
+.col-9 {width:75%}
+.col-10 {width:83.33%}
+.col-11 {width:91.66%}
+.col-12 {width:100%}
+
+html,
+body {
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
-canvas {
+#name{
+  position: absolute;
+  top: 8.33%;
+  left: 8.33%;
+
+  color: #191c31;
+}
+
+
+
+
+
+#about{
+  display: none;
+  
+  position: absolute;
+  top: 25%;
+  left: 25%;
+
+  color: #191c31;
+}
+
+#profile{
   display: block;
+
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 16.66%;
+
+  color: #191c31;
+  text-align: justify;
 }
 
-.name{
+#education{
+  display: block;
+
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  width: 16.66%;
+
+  color: #191c31;
+  text-align: justify;
+}
+
+#professional{
+  display: block;
+
+  position: absolute;
+  top: 75%;
+  left: 25%;
+  width: 16.66%;
+
+  color: #191c31;
+  text-align: justify;
+}
+
+#portrait{
+  display: block;
+
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  width: 33.33%;
+}
+
+#highlight:hover{
+  background-color: #191c31;
+  color: #ffffff;
+}
+
+
+
+
+
+#works{
+  display: none;
+
+  position: absolute;
+  top: 33.33%;
+  left: 25%;
+
+  color: #191c31;
+}
+
+#editory{
+  display: none;
+
+  position: absolute;
+  top: 41.66%;
+  left: 41.66%;
+
+  color: #191c31;
+}
+
+#audiovisual{
+  display: none;
+
+  position: absolute;
+  top: 45.82%;
+  left: 41.66%;
+
+  color: #191c31;
+}
+
+#installations{
+  display: none;
+
+  position: absolute;
+  top: 50%;
+  left: 41.66%;
+
+  color: #191c31;
+}
+
+#threed{
+  display: none;
+
+  position: absolute;
+  top: 54.16%;
+  left: 41.66%;
+
+  color: #191c31;
+}
+
+
+
+
+
+#contacts{
+  display: none;
+
+  position: absolute;
+  top: 41.66%;
+  left: 25%;
+
+  color: #191c31;
+}
+
+
+
+
+
+#email{
+  display: none;
+
+  position: absolute;
+  top: 50%;
+  left: 58.33%;
+
+  color: #191c31;
+}
+
+#phone{
+  display: none;
+
+  position: absolute;
+  top: 54.16%;
+  left: 58.33%;
+
+  color: #191c31;
+}
+
+#instagram{
+  display: none;
+
+  position: absolute;
+  top: 58.33%;
+  left: 58.33%;
+
   color: #191c31;
 }

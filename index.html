@@ -8,17 +8,30 @@
 
     <link rel = 'stylesheet'  type = 'text/css' href = 'style.css'>
 
-    <script src = 'libraries/p5.min.js'></script>
-    <script src = 'libraries/p5.sound.min.js'></script>
+    <script src = 'libraries/p5.js'></script>
     <script src = 'sketch.js'></script>
   </head>
 
   <body>
-    <div class = 'name' onclick = 'revealSections'>
-      Andrea Martinelli
-    </div>
-    <div class = 'line' id = 'line1'></div>
-    <div class = 'line' id = 'line2'></div>
-    <div class = 'line' id = 'line3'></div>
+    <div id = 'name'  onclick = 'revealSections()'>/ andrea martinelli</div>
+
+
+    <a href = 'about.html' id  = 'about'>/ about</a>
+
+
+    <div id = 'works' onclick = 'revealSubSections()'>/ works</div>
+
+    <a href = 'editory.html' id = 'editory'>/ editory</a>
+    <a href = 'audiovisual.html' id = 'audiovisual'>/ audiovisual</a>
+    <a href = 'installations.html' id = 'installations'>/ installations</a>
+    <a href = 'threed.html' id = 'threed'>/ threed</a>
+
+    
+    <div id = 'contacts' onclick = 'revealContacts()'>/ contacts</div>
+    
+    <div id = 'email'> / email ― <a href = 'mailto: a.martinelli0601@gmail.com'>write me</a></div>
+    <div id = 'phone'> / phone ― <a href='tel:+39 3924090813'>call me</a></div>
+    <div id = 'instagram'>/ instagram ― <a href='https://www.instagram.com/carol.jpegg/'>follow me</a></div>
+
   </body>
 </html>
