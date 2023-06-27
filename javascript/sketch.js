@@ -1,3 +1,6 @@
+let xPos = 0;
+let yPos = 0;
+
 let andrea;
 let about;
 let works;
@@ -31,7 +34,7 @@ function draw(){
 
     let homeXPos = home.offsetLeft;
     let homeHeight = home.offsetHeight;
-    let homeYpos = home.offsetTop;
+    let homeYpos = home.offsetTop + 20;
 
     let aboutXPos = about.offsetLeft;
     let aboutHeight = about.offsetHeight;
@@ -78,15 +81,27 @@ function draw(){
 
 
 
+    background('#ffffff25')
+    let currentSection = 'home';
+    xPos = lerp(xPos, mouseX, 0.05);
+    yPos = lerp(yPos, mouseY, 0.05);
+
+    textFont('serif');
+    fill('#191c31');
+    text(currentSection, xPos, yPos);
+
+
+
+
+
     noFill();
-    stroke(0);
+    stroke('#191c31');
     strokeWeight(1);
-    clear();
     if(about.style.display == 'block'){
         beginShape();
         vertex(homeXPos, homeYpos + homeHeight);
         vertex(homeXPos, aboutYpos + (aboutHeight / 2));
-        vertex(aboutXPos, aboutYpos + (aboutHeight / 2));
+        vertex(aboutXPos - 20, aboutYpos + (aboutHeight / 2));
         endShape();
     }
 
@@ -94,7 +109,7 @@ function draw(){
         beginShape();
         vertex(homeXPos, homeYpos + homeHeight);
         vertex(homeXPos, worksYpos + (worksHeight / 2));
-        vertex(worksXPos, worksYpos + (worksHeight / 2));
+        vertex(worksXPos - 20, worksYpos + (worksHeight / 2));
         endShape();
     }
 
@@ -102,7 +117,7 @@ function draw(){
         beginShape();
         vertex(homeXPos, homeYpos + homeHeight);
         vertex(homeXPos, contactsYpos + (contactsHeight / 2));
-        vertex(contactsXPos, contactsYpos + (contactsHeight / 2));
+        vertex(contactsXPos - 20, contactsYpos + (contactsHeight / 2));
         endShape();
     }
 
@@ -112,33 +127,33 @@ function draw(){
 
     if(editory.style.display == 'block'){
         beginShape();
-        vertex(worksXPos, worksYpos + worksHeight);
+        vertex(worksXPos, worksYpos + 20 + worksHeight);
         vertex(worksXPos, editoryYpos + (editoryHeight / 2));
-        vertex(editoryXPos, editoryYpos + (editoryHeight / 2));
+        vertex(editoryXPos - 20, editoryYpos + (editoryHeight / 2));
         endShape();
     }
 
     if(audiovisual.style.display == 'block'){
         beginShape();
-        vertex(worksXPos, worksYpos + worksHeight);
+        vertex(worksXPos, worksYpos + 20 + worksHeight);
         vertex(worksXPos, audiovisualYpos + (audiovisualHeight / 2));
-        vertex(audiovisualXPos, audiovisualYpos + (audiovisualHeight / 2));
+        vertex(audiovisualXPos - 20, audiovisualYpos + (audiovisualHeight / 2));
         endShape();
     }
 
     if(installations.style.display == 'block'){
         beginShape();
-        vertex(worksXPos, worksYpos + worksHeight);
+        vertex(worksXPos, worksYpos + 20 + worksHeight);
         vertex(worksXPos, installationsYpos + (installationsHeight / 2));
-        vertex(installationsXPos, installationsYpos + (installationsHeight / 2));
+        vertex(installationsXPos - 20, installationsYpos + (installationsHeight / 2));
         endShape();
     }
 
     if(threed.style.display == 'block'){
         beginShape();
-        vertex(worksXPos, worksYpos + worksHeight);
+        vertex(worksXPos, worksYpos + 20 + worksHeight);
         vertex(worksXPos, threedYpos + (threedHeight / 2));
-        vertex(threedXPos, threedYpos + (threedHeight / 2));
+        vertex(threedXPos - 20, threedYpos + (threedHeight / 2));
         endShape();
     }
 
@@ -148,25 +163,25 @@ function draw(){
 
     if(email.style.display == 'block'){
         beginShape();
-        vertex(contactsXPos, contactsYpos + contactsHeight);
+        vertex(contactsXPos, contactsYpos + 20 + contactsHeight);
         vertex(contactsXPos, emailYpos + (emailHeight / 2));
-        vertex(emailXPos, emailYpos + (emailHeight / 2));
+        vertex(emailXPos - 20, emailYpos + (emailHeight / 2));
         endShape();
     }
 
     if(phone.style.display == 'block'){
         beginShape();
-        vertex(contactsXPos, contactsYpos + contactsHeight);
+        vertex(contactsXPos, contactsYpos + 20 + contactsHeight);
         vertex(contactsXPos, phoneYpos + (phoneHeight / 2));
-        vertex(phoneXPos, phoneYpos + (phoneHeight / 2));
+        vertex(phoneXPos - 20, phoneYpos + (phoneHeight / 2));
         endShape();
     }
 
     if(instagram.style.display == 'block'){
         beginShape();
-        vertex(contactsXPos, contactsYpos + contactsHeight);
+        vertex(contactsXPos, contactsYpos + 20 + contactsHeight);
         vertex(contactsXPos, instagramYpos + (instagramHeight / 2));
-        vertex(instagramXPos, instagramYpos + (instagramHeight / 2));
+        vertex(instagramXPos - 20, instagramYpos + (instagramHeight / 2));
         endShape();
     }
 }

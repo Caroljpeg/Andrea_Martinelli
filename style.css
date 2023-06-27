@@ -16,6 +16,11 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  cursor: none;
+}
+
+a{
+  cursor: none;
 }
 
 #name{
@@ -24,6 +29,13 @@ body {
   left: 8.33%;
 
   color: #191c31;
+  text-decoration: underline;
+}
+
+#name:hover{
+  background-color: #191c31;
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 
@@ -38,7 +50,14 @@ body {
   left: 25%;
 
   color: #191c31;
+  text-align: justify;
 }
+#about:hover{
+  background-color: #191c31;
+  color: #ffffff;
+  text-decoration: underline;
+}
+
 
 #profile{
   display: block;
@@ -76,13 +95,14 @@ body {
   text-align: justify;
 }
 
-#portrait{
-  display: block;
+#job{
+  color: #191c31;
+  text-decoration: underline;
+}
 
-  position: absolute;
-  top: 25%;
-  left: 50%;
-  width: 33.33%;
+#job:hover{
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 #highlight:hover{
@@ -102,7 +122,15 @@ body {
   left: 25%;
 
   color: #191c31;
+  text-decoration: underline;
 }
+
+#works:hover{
+  background-color: #191c31;
+  color: #ffffff;
+  text-decoration: underline;
+}
+
 
 #editory{
   display: none;
@@ -112,6 +140,12 @@ body {
   left: 41.66%;
 
   color: #191c31;
+}
+
+#editory:hover{
+  background-color: #191c31;
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 #audiovisual{
@@ -124,6 +158,12 @@ body {
   color: #191c31;
 }
 
+#audiovisual:hover{
+  background-color: #191c31;
+  color: #ffffff;
+  text-decoration: underline;
+}
+
 #installations{
   display: none;
 
@@ -134,6 +174,12 @@ body {
   color: #191c31;
 }
 
+#installations:hover{
+  background-color: #191c31;
+  color: #ffffff;
+  text-decoration: underline;
+}
+
 #threed{
   display: none;
 
@@ -142,6 +188,12 @@ body {
   left: 41.66%;
 
   color: #191c31;
+}
+
+#threed:hover{
+  background-color: #191c31;
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 
@@ -156,10 +208,14 @@ body {
   left: 25%;
 
   color: #191c31;
+  text-decoration: underline;
 }
 
-
-
+#contacts:hover{
+  background-color: #191c31;
+  color: #ffffff;
+  text-decoration: underline;
+}
 
 
 #email{
@@ -172,6 +228,12 @@ body {
   color: #191c31;
 }
 
+#email:hover{
+  background-color: #191c31;
+  color: #ffffff;
+  text-decoration: underline;
+}
+
 #phone{
   display: none;
 
@@ -182,6 +244,12 @@ body {
   color: #191c31;
 }
 
+#phone:hover{
+  background-color: #191c31;
+  color: #ffffff;
+  text-decoration: underline;
+}
+
 #instagram{
   display: none;
 
@@ -190,4 +258,50 @@ body {
   left: 58.33%;
 
   color: #191c31;
+}
+
+#instagram:hover{
+  background-color: #191c31;
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+table, tr, td{
+  table-layout: fixed;
+  width: 66.33%;
+
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 5px;
+
+  color: #191c31;
+}
+
+td:hover{
+  background-color: #191c31;
+  color:#ffffff;
+}
+
+#projects{
+  position: absolute;
+  top: 25%;
+  left: 25%;
+}
+
+#team{
+  color: #191c31;
+}
+
+#team:hover{
+  background-color: #191c31;
+  color:#ffffff;
 }
