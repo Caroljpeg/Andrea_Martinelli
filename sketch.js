@@ -1,5 +1,7 @@
-let xPos = 0;
-let yPos = 0;
+let rowsSeed;
+let columnsSeed;
+
+seedsArray = [1, 5, 25, 30, 35, 40, 45, 50];
 
 let andrea;
 let about;
@@ -15,6 +17,15 @@ let instagram;
 
 function setup(){
     createCanvas(windowWidth, windowHeight);
+
+    if(windowWidth < 768){
+        console.log('mobile');
+        columnsSeed = random(seedsArray);
+        rowsSeed = int(columnsSeed * 2);
+    } else {
+        rowsSeed = random(seedsArray);
+        columnsSeed = int(rowsSeed * 2);
+    }
 }
 
 function draw(){
@@ -81,14 +92,8 @@ function draw(){
 
 
 
-    background('#ffffff25')
-    let currentSection = 'home';
-    xPos = lerp(xPos, mouseX, 0.05);
-    yPos = lerp(yPos, mouseY, 0.05);
-
-    textFont('serif');
-    fill('#191c31');
-    text(currentSection, xPos, yPos);
+    background('#ffffff15')
+    backgroundNoise();
 
 
 
@@ -96,7 +101,7 @@ function draw(){
 
     noFill();
     stroke('#191c31');
-    strokeWeight(1);
+    strokeWeight(0.25);
     if(about.style.display == 'block'){
         beginShape();
         vertex(homeXPos, homeYpos + homeHeight);
@@ -183,6 +188,56 @@ function draw(){
         vertex(contactsXPos, instagramYpos + (instagramHeight / 2));
         vertex(instagramXPos - 20, instagramYpos + (instagramHeight / 2));
         endShape();
+    }
+}
+
+
+
+
+
+function backgroundNoise(){
+    fill('#b8c8e9');
+    stroke('#b9c9e940');
+    strokeCap(SQUARE);
+
+    let columns = columnsSeed;
+    let rows = rowsSeed;
+    let cellsCount = columns * rows;
+
+    let gridWidth = windowWidth;
+    let gridHeight = windowHeight;
+    let cellWidth = gridWidth / columns;
+    let cellHeight = gridHeight / rows;
+    let marginX = (windowWidth - gridWidth);
+    let marginY = (windowHeight - gridHeight);
+
+    for (let a = 0; a < cellsCount; a++){
+        let column = a % columns;
+        let row = floor(a/columns);
+
+        let x = column * cellWidth;
+        let y = row * cellHeight;
+        let w = cellWidth * 0.95;
+        let h = cellHeight * 0.95
+
+        let noiseScale = .001;
+
+        let perlin = noise(x * noiseScale, y * noiseScale, frameCount * 0.005);
+        let perlinN = map(perlin, 0, 1, -1, 1);
+        let angle = perlinN * TWO_PI;
+        let scale = map(perlinN, -1, 1, 0, 20);
+
+        push();
+        translate(x, y);
+        translate(marginX, marginY);
+        translate(w * 0.5, h * 0.5)
+        rotate(angle);
+
+        strokeWeight(scale);
+
+        line(w * -0.5, 0, w * 0.5, 0)
+
+        pop();
     }
 }
 
@@ -288,4 +343,12 @@ function revealContacts(){
         phone.style.display = 'none';
         instagram.style.display = 'none';
     }
+}
+
+
+
+
+
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
 }

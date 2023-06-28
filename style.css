@@ -16,11 +16,12 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  cursor: none;
+  cursor: text;
 }
 
 a{
-  cursor: none;
+  cursor: text;
+  color: #191c31;
 }
 
 #name{
@@ -275,15 +276,17 @@ a{
 
 
 
-table, tr, td{
+table{
   table-layout: fixed;
   width: 66.33%;
 
-  border: 1px solid;
-  border-radius: 5px;
-  padding: 5px;
-
   color: #191c31;
+}
+
+tr, td{
+  border: 0.5px solid;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 td:hover{
@@ -297,11 +300,49 @@ td:hover{
   left: 25%;
 }
 
-#team{
-  color: #191c31;
-}
-
 #team:hover{
   background-color: #191c31;
   color:#ffffff;
+}
+
+#projectName:hover{
+  background-color: #191c31;
+  color:#ffffff;
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) 
+{
+  #responsive{
+    display: none;
+  }
+  #profile{
+    width: 50%;
+  }
+
+  #education{
+    top: 41.66%;
+    width: 50%;
+  }
+
+  #professional{
+    top: 70.82%;
+    width: 50%;
+  }
+
+  table{
+    width: 83.33%;
+  }
+
+  #projects{
+    left: 8.33%;
+  }
 }
