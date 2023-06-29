@@ -1,15 +1,50 @@
-.col-1 {width:8.33%}
-.col-2 {width:16.66%}
-.col-3 {width:25%}
-.col-4 {width:33.33%}
-.col-5 {width:41.66%}
-.col-6 {width:50%}
-.col-7 {width:58.33%}
-.col-8 {width:66.66%}
-.col-9 {width:75%}
-.col-10 {width:83.33%}
-.col-11 {width:91.66%}
-.col-12 {width:100%}
+.col-1 {
+  width: 8.33%
+}
+
+.col-2 {
+  width: 16.66%
+}
+
+.col-3 {
+  width: 25%
+}
+
+.col-4 {
+  width: 33.33%
+}
+
+.col-5 {
+  width: 41.66%
+}
+
+.col-6 {
+  width: 50%
+}
+
+.col-7 {
+  width: 58.33%
+}
+
+.col-8 {
+  width: 66.66%
+}
+
+.col-9 {
+  width: 75%
+}
+
+.col-10 {
+  width: 83.33%
+}
+
+.col-11 {
+  width: 91.66%
+}
+
+.col-12 {
+  width: 100%
+}
 
 html,
 body {
@@ -17,24 +52,27 @@ body {
   padding: 0;
   overflow: hidden;
   cursor: text;
+
+  font-family: 'Helvetica neue';
+  text-transform: uppercase;
 }
 
-a{
+a {
   cursor: text;
-  color: #191c31;
+  color: #1A1A1A;
 }
 
-#name{
+#name {
   position: absolute;
   top: 8.33%;
   left: 8.33%;
 
-  color: #191c31;
+  color: #1A1A1A;
   text-decoration: underline;
 }
 
-#name:hover{
-  background-color: #191c31;
+#name:hover {
+  background-color: #1A1A1A;
   color: #ffffff;
   text-decoration: underline;
 }
@@ -43,24 +81,25 @@ a{
 
 
 
-#about{
+#about {
   display: none;
-  
+
   position: absolute;
   top: 25%;
   left: 25%;
 
-  color: #191c31;
+  color: #1A1A1A;
   text-align: justify;
 }
-#about:hover{
-  background-color: #191c31;
+
+#about:hover {
+  background-color: #1A1A1A;
   color: #ffffff;
   text-decoration: underline;
 }
 
 
-#profile{
+#profile {
   display: block;
 
   position: absolute;
@@ -68,11 +107,11 @@ a{
   left: 25%;
   width: 16.66%;
 
-  color: #191c31;
+  color: #1A1A1A;
   text-align: justify;
 }
 
-#education{
+#education {
   display: block;
 
   position: absolute;
@@ -80,11 +119,11 @@ a{
   left: 25%;
   width: 16.66%;
 
-  color: #191c31;
+  color: #1A1A1A;
   text-align: justify;
 }
 
-#professional{
+#professional {
   display: block;
 
   position: absolute;
@@ -92,22 +131,34 @@ a{
   left: 25%;
   width: 16.66%;
 
-  color: #191c31;
+  color: #1A1A1A;
   text-align: justify;
 }
 
-#job{
-  color: #191c31;
-  text-decoration: underline;
-}
-
-#job:hover{
+#job {
+  background-color: #1A1A1A;
   color: #ffffff;
   text-decoration: underline;
 }
 
-#highlight:hover{
-  background-color: #191c31;
+#job:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+#school {
+  background-color: #1A1A1A;
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+#school:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+#highlight:hover {
+  background-color: #1A1A1A;
   color: #ffffff;
 }
 
@@ -115,84 +166,84 @@ a{
 
 
 
-#works{
+#works {
   display: none;
 
   position: absolute;
   top: 33.33%;
   left: 25%;
 
-  color: #191c31;
+  color: #1A1A1A;
   text-decoration: underline;
 }
 
-#works:hover{
-  background-color: #191c31;
+#works:hover {
+  background-color: #1A1A1A;
   color: #ffffff;
   text-decoration: underline;
 }
 
 
-#editory{
+#editory {
   display: none;
 
   position: absolute;
   top: 41.66%;
   left: 41.66%;
 
-  color: #191c31;
+  color: #1A1A1A;
 }
 
-#editory:hover{
-  background-color: #191c31;
+#editory:hover {
+  background-color: #1A1A1A;
   color: #ffffff;
   text-decoration: underline;
 }
 
-#audiovisual{
+#audiovisual {
   display: none;
 
   position: absolute;
   top: 45.82%;
   left: 41.66%;
 
-  color: #191c31;
+  color: #1A1A1A;
 }
 
-#audiovisual:hover{
-  background-color: #191c31;
+#audiovisual:hover {
+  background-color: #1A1A1A;
   color: #ffffff;
   text-decoration: underline;
 }
 
-#installations{
+#installations {
   display: none;
 
   position: absolute;
   top: 50%;
   left: 41.66%;
 
-  color: #191c31;
+  color: #1A1A1A;
 }
 
-#installations:hover{
-  background-color: #191c31;
+#installations:hover {
+  background-color: #1A1A1A;
   color: #ffffff;
   text-decoration: underline;
 }
 
-#threed{
+#threed {
   display: none;
 
   position: absolute;
   top: 54.16%;
   left: 41.66%;
 
-  color: #191c31;
+  color: #1A1A1A;
 }
 
-#threed:hover{
-  background-color: #191c31;
+#threed:hover {
+  background-color: #1A1A1A;
   color: #ffffff;
   text-decoration: underline;
 }
@@ -201,68 +252,68 @@ a{
 
 
 
-#contacts{
+#contacts {
   display: none;
 
   position: absolute;
   top: 41.66%;
   left: 25%;
 
-  color: #191c31;
+  color: #1A1A1A;
   text-decoration: underline;
 }
 
-#contacts:hover{
-  background-color: #191c31;
+#contacts:hover {
+  background-color: #1A1A1A;
   color: #ffffff;
   text-decoration: underline;
 }
 
 
-#email{
+#email {
   display: none;
 
   position: absolute;
   top: 50%;
   left: 58.33%;
 
-  color: #191c31;
+  color: #1A1A1A;
 }
 
-#email:hover{
-  background-color: #191c31;
+#email:hover {
+  background-color: #1A1A1A;
   color: #ffffff;
   text-decoration: underline;
 }
 
-#phone{
+#phone {
   display: none;
 
   position: absolute;
   top: 54.16%;
   left: 58.33%;
 
-  color: #191c31;
+  color: #1A1A1A;
 }
 
-#phone:hover{
-  background-color: #191c31;
+#phone:hover {
+  background-color: #1A1A1A;
   color: #ffffff;
   text-decoration: underline;
 }
 
-#instagram{
+#instagram {
   display: none;
 
   position: absolute;
   top: 58.33%;
   left: 58.33%;
 
-  color: #191c31;
+  color: #1A1A1A;
 }
 
-#instagram:hover{
-  background-color: #191c31;
+#instagram:hover {
+  background-color: #1A1A1A;
   color: #ffffff;
   text-decoration: underline;
 }
@@ -276,38 +327,40 @@ a{
 
 
 
-table{
+table {
   table-layout: fixed;
   width: 66.33%;
 
-  color: #191c31;
+  color: #1A1A1A;
 }
 
-tr, td{
-  border: 0.5px solid;
+tr,
+td {
   padding: 5px;
-  border-radius: 5px;
 }
 
-td:hover{
-  background-color: #191c31;
-  color:#ffffff;
-}
-
-#projects{
+#projects {
   position: absolute;
   top: 25%;
   left: 25%;
 }
 
-#team:hover{
-  background-color: #191c31;
-  color:#ffffff;
+#team {
+  color: #1A1A1A;
 }
 
-#projectName:hover{
-  background-color: #191c31;
-  color:#ffffff;
+#team:hover {
+  background-color: #1A1A1A;
+  color: #ffffff;
+}
+
+#projectName {
+  color: #1A1A1A;
+}
+
+#projectName:hover {
+  background-color: #1A1A1A;
+  color: #ffffff;
 }
 
 
@@ -319,30 +372,109 @@ td:hover{
 
 
 
-@media (max-width: 768px) 
-{
-  #responsive{
+#projectPage {
+  position: absolute;
+  top: 16.66%;
+  left: 16.66%;
+
+  height: 75%;
+  width: 75%;
+}
+
+
+#titleTop {
+  position: absolute;
+  left: 16.66%;
+  top: 14.66%;
+
+  width: 75%;
+  height: 2%;
+
+  color: #1A1A1A;
+  border: 2px solid;
+}
+
+#titleBottom {
+  position: absolute;
+  left: 16.66%;
+  top: 91.66%;
+
+  width: 75%;
+  height: 2%;
+
+  color: #1A1A1A;
+  border: 2px solid;
+}
+
+#infos {
+  position: absolute;
+  top: 4.16%;
+}
+
+#mainPicture {
+  position: absolute;
+  top: 4.16%;
+  left: 25%;
+
+  width: 50%;
+
+  border: 2px solid;
+}
+
+#media1 {
+  position: absolute;
+  top: 4.16%;
+  left: 79.16%;
+
+  width: 20.84%;
+
+  border: 2px solid;
+}
+#media2 {
+  position: absolute;
+  top: 50%;
+  left: 79.16%;
+
+  width: 20.84%;
+  height: 20.84%;
+
+  border: 2px solid;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  #responsive {
     display: none;
   }
-  #profile{
+
+  #profile {
     width: 50%;
   }
 
-  #education{
+  #education {
     top: 41.66%;
     width: 50%;
   }
 
-  #professional{
+  #professional {
     top: 70.82%;
     width: 50%;
   }
 
-  table{
+  table {
     width: 83.33%;
   }
 
-  #projects{
+  #projects {
     left: 8.33%;
   }
 }

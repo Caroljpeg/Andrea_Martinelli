@@ -18,8 +18,8 @@ function draw(){
 
 
 function backgroundNoise(){
-    fill('#b8c8e9');
-    stroke('#b9c9e940');
+    fill('#E6E6E6');
+    stroke('#E6E6E6');
     strokeCap(SQUARE);
 
     let columns = columnsSeed;

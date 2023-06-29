@@ -15,11 +15,10 @@ let email;
 let phone;
 let instagram;
 
-function setup(){
+function setup() {
     createCanvas(windowWidth, windowHeight);
 
-    if(windowWidth < 768){
-        console.log('mobile');
+    if (windowWidth < 768) {
         columnsSeed = random(seedsArray);
         rowsSeed = int(columnsSeed * 2);
     } else {
@@ -28,7 +27,7 @@ function setup(){
     }
 }
 
-function draw(){
+function draw() {
     home = document.getElementById('name');
     about = document.getElementById('about');
     works = document.getElementById('works');
@@ -100,9 +99,9 @@ function draw(){
 
 
     noFill();
-    stroke('#191c31');
+    stroke('#1A1A1A');
     strokeWeight(0.25);
-    if(about.style.display == 'block'){
+    if (about.style.display == 'block') {
         beginShape();
         vertex(homeXPos, homeYpos + homeHeight);
         vertex(homeXPos, aboutYpos + (aboutHeight / 2));
@@ -110,7 +109,7 @@ function draw(){
         endShape();
     }
 
-    if(works.style.display == 'block'){
+    if (works.style.display == 'block') {
         beginShape();
         vertex(homeXPos, homeYpos + homeHeight);
         vertex(homeXPos, worksYpos + (worksHeight / 2));
@@ -118,7 +117,7 @@ function draw(){
         endShape();
     }
 
-    if(contacts.style.display == 'block'){
+    if (contacts.style.display == 'block') {
         beginShape();
         vertex(homeXPos, homeYpos + homeHeight);
         vertex(homeXPos, contactsYpos + (contactsHeight / 2));
@@ -130,7 +129,7 @@ function draw(){
 
 
 
-    if(editory.style.display == 'block'){
+    if (editory.style.display == 'block') {
         beginShape();
         vertex(worksXPos, worksYpos + 20 + worksHeight);
         vertex(worksXPos, editoryYpos + (editoryHeight / 2));
@@ -138,7 +137,7 @@ function draw(){
         endShape();
     }
 
-    if(audiovisual.style.display == 'block'){
+    if (audiovisual.style.display == 'block') {
         beginShape();
         vertex(worksXPos, worksYpos + 20 + worksHeight);
         vertex(worksXPos, audiovisualYpos + (audiovisualHeight / 2));
@@ -146,7 +145,7 @@ function draw(){
         endShape();
     }
 
-    if(installations.style.display == 'block'){
+    if (installations.style.display == 'block') {
         beginShape();
         vertex(worksXPos, worksYpos + 20 + worksHeight);
         vertex(worksXPos, installationsYpos + (installationsHeight / 2));
@@ -154,7 +153,7 @@ function draw(){
         endShape();
     }
 
-    if(threed.style.display == 'block'){
+    if (threed.style.display == 'block') {
         beginShape();
         vertex(worksXPos, worksYpos + 20 + worksHeight);
         vertex(worksXPos, threedYpos + (threedHeight / 2));
@@ -166,7 +165,7 @@ function draw(){
 
 
 
-    if(email.style.display == 'block'){
+    if (email.style.display == 'block') {
         beginShape();
         vertex(contactsXPos, contactsYpos + 20 + contactsHeight);
         vertex(contactsXPos, emailYpos + (emailHeight / 2));
@@ -174,7 +173,7 @@ function draw(){
         endShape();
     }
 
-    if(phone.style.display == 'block'){
+    if (phone.style.display == 'block') {
         beginShape();
         vertex(contactsXPos, contactsYpos + 20 + contactsHeight);
         vertex(contactsXPos, phoneYpos + (phoneHeight / 2));
@@ -182,7 +181,7 @@ function draw(){
         endShape();
     }
 
-    if(instagram.style.display == 'block'){
+    if (instagram.style.display == 'block') {
         beginShape();
         vertex(contactsXPos, contactsYpos + 20 + contactsHeight);
         vertex(contactsXPos, instagramYpos + (instagramHeight / 2));
@@ -195,9 +194,9 @@ function draw(){
 
 
 
-function backgroundNoise(){
-    fill('#b8c8e9');
-    stroke('#b9c9e940');
+function backgroundNoise() {
+    fill('#E6E6E6');
+    stroke('#E6E6E6');
     strokeCap(SQUARE);
 
     let columns = columnsSeed;
@@ -211,9 +210,9 @@ function backgroundNoise(){
     let marginX = (windowWidth - gridWidth);
     let marginY = (windowHeight - gridHeight);
 
-    for (let a = 0; a < cellsCount; a++){
+    for (let a = 0; a < cellsCount; a++) {
         let column = a % columns;
-        let row = floor(a/columns);
+        let row = floor(a / columns);
 
         let x = column * cellWidth;
         let y = row * cellHeight;
@@ -259,11 +258,11 @@ function revealSections() {
     phone = document.getElementById('phone');
     instagram = document.getElementById('instagram');
 
-    if(about.style.display == 'none' || about.style.display == ''){
+    if (about.style.display == 'none' || about.style.display == '') {
         about.style.display = 'block';
         works.style.display = 'block';
         contacts.style.display = 'block';
-    } else{
+    } else {
         about.style.display = 'none';
         works.style.display = 'none';
         contacts.style.display = 'none';
@@ -300,7 +299,7 @@ function revealSubSections() {
     phone = document.getElementById('phone');
     instagram = document.getElementById('instagram');
 
-    if(editory.style.display == 'none' || editory.style.display == ''){
+    if (editory.style.display == 'none' || editory.style.display == '') {
         contacts.style.top = '66.66%';
         email.style.top = '75%';
         phone.style.top = '79.16%';
@@ -310,7 +309,7 @@ function revealSubSections() {
         audiovisual.style.display = 'block';
         installations.style.display = 'block';
         threed.style.display = 'block';
-    } else{
+    } else {
         contacts.style.top = '41.66%';
         email.style.top = '50%';
         phone.style.top = '54.16%';
@@ -327,18 +326,18 @@ function revealSubSections() {
 
 
 
-function revealContacts(){
+function revealContacts() {
     contacts = document.getElementById('contacts');
 
     email = document.getElementById('email');
     phone = document.getElementById('phone');
     instagram = document.getElementById('instagram');
 
-    if(email.style.display == 'none' || email.style.display == ''){
+    if (email.style.display == 'none' || email.style.display == '') {
         email.style.display = 'block';
         phone.style.display = 'block';
         instagram.style.display = 'block';
-    } else{
+    } else {
         email.style.display = 'none';
         phone.style.display = 'none';
         instagram.style.display = 'none';
