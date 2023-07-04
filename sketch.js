@@ -1,7 +1,10 @@
 let rowsSeed;
 let columnsSeed;
 
-seedsArray = [1, 5, 25, 30, 35, 40, 45, 50];
+seedsArray = [1, 25, 40, 45, 50, 55, 60, 65, 70, 75];
+// const densityString = '        .:░▒▓█';
+const densityString = '       .:-i|=+%O#@'
+//const densityString = "Ñ@#W$9876543210?!abc;:+=-,._                    ";
 
 let andrea;
 let about;
@@ -91,8 +94,8 @@ function draw() {
 
 
 
-    background('#ffffff15')
-    backgroundNoise();
+    background('#ffffff25')
+    backgroundNoise2();
 
 
 
@@ -195,7 +198,6 @@ function draw() {
 
 
 function backgroundNoise() {
-    fill('#E6E6E6');
     stroke('#E6E6E6');
     strokeCap(SQUARE);
 
@@ -219,12 +221,13 @@ function backgroundNoise() {
         let w = cellWidth * 0.95;
         let h = cellHeight * 0.95
 
-        let noiseScale = .001;
+        let noiseScale = 0.001;
 
         let perlin = noise(x * noiseScale, y * noiseScale, frameCount * 0.005);
-        let perlinN = map(perlin, 0, 1, -1, 1);
-        let angle = perlinN * TWO_PI;
-        let scale = map(perlinN, -1, 1, 0, 20);
+        let perlinValue = map(perlin, 0, 1, -1, 1);
+        let angle = perlinValue * TWO_PI;
+        let scale = map(perlinValue, -1, 1, 0, 5);
+        let perlinColor = map(perlinValue, -1, 1, 150, 255);
 
         push();
         translate(x, y);
@@ -232,6 +235,7 @@ function backgroundNoise() {
         translate(w * 0.5, h * 0.5)
         rotate(angle);
 
+        stroke(perlinColor);
         strokeWeight(scale);
 
         line(w * -0.5, 0, w * 0.5, 0)
@@ -240,6 +244,49 @@ function backgroundNoise() {
     }
 }
 
+
+
+
+
+function backgroundNoise2() {
+
+let columns = 100;
+let columnShortSide = windowWidth / columns;
+let rows = windowHeight / columnShortSide;
+
+let cellsCount = columns * rows;
+let cellWidth = windowWidth / columns;
+let cellHeight = windowHeight / rows;
+
+for (let a = 0; a < cellsCount; a++) {
+    let column = a % columns;
+    let row = a / columns;
+
+    let x = column * cellWidth;
+    let y = row * cellHeight;
+    let w = cellWidth;
+    let h = cellHeight;
+
+    let noiseScale = 0.001;
+    noiseDetail(5, 0.2);
+    let perlin = noise(x * noiseScale, y * noiseScale, frameCount * 0.05);
+    let perlinValue = map(perlin, 0, 1, -1, 1);
+    let perlinColor = map(perlinValue, -1, 1, 0, 255);
+
+    push();
+
+    noStroke();
+    fill(perlinColor);
+
+    // let characterIndex = floor(map(perlinColor, 0, 255, 0, 18));
+    // let character = densityString[characterIndex];
+    // textSize(w);
+    // textAlign(CENTER, CENTER);
+    // text(character, x, y, w, h)
+    rect(x, y, w, h);
+    pop();
+}
+}
 
 
 
