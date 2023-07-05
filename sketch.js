@@ -1,11 +1,3 @@
-let rowsSeed;
-let columnsSeed;
-
-seedsArray = [1, 25, 40, 45, 50, 55, 60, 65, 70, 75];
-// const densityString = '        .:░▒▓█';
-const densityString = '       .:-i|=+%O#@'
-//const densityString = "Ñ@#W$9876543210?!abc;:+=-,._                    ";
-
 let andrea;
 let about;
 let works;
@@ -18,16 +10,12 @@ let email;
 let phone;
 let instagram;
 
+
+let date = new Date();
+let hours = date.getHours();
+
 function setup() {
     createCanvas(windowWidth, windowHeight);
-
-    if (windowWidth < 768) {
-        columnsSeed = random(seedsArray);
-        rowsSeed = int(columnsSeed * 2);
-    } else {
-        rowsSeed = random(seedsArray);
-        columnsSeed = int(rowsSeed * 2);
-    }
 }
 
 function draw() {
@@ -94,16 +82,14 @@ function draw() {
 
 
 
-    background('#ffffff25')
     backgroundNoise2();
-
 
 
 
 
     noFill();
     stroke('#1A1A1A');
-    strokeWeight(0.25);
+    strokeWeight(1);
     if (about.style.display == 'block') {
         beginShape();
         vertex(homeXPos, homeYpos + homeHeight);
@@ -249,44 +235,24 @@ function backgroundNoise() {
 
 
 function backgroundNoise2() {
-
-let columns = 100;
-let columnShortSide = windowWidth / columns;
-let rows = windowHeight / columnShortSide;
-
-let cellsCount = columns * rows;
-let cellWidth = windowWidth / columns;
-let cellHeight = windowHeight / rows;
-
-for (let a = 0; a < cellsCount; a++) {
-    let column = a % columns;
-    let row = a / columns;
-
-    let x = column * cellWidth;
-    let y = row * cellHeight;
-    let w = cellWidth;
-    let h = cellHeight;
-
     let noiseScale = 0.001;
-    noiseDetail(5, 0.2);
-    let perlin = noise(x * noiseScale, y * noiseScale, frameCount * 0.05);
-    let perlinValue = map(perlin, 0, 1, -1, 1);
-    let perlinColor = map(perlinValue, -1, 1, 0, 255);
+    let noiseVelocity = map(hours, 0, 23, 0.02, 0.001);
 
-    push();
+    noiseDetail(2, 2);
 
-    noStroke();
-    fill(perlinColor);
+    let pixel = 10;
 
-    // let characterIndex = floor(map(perlinColor, 0, 255, 0, 18));
-    // let character = densityString[characterIndex];
-    // textSize(w);
-    // textAlign(CENTER, CENTER);
-    // text(character, x, y, w, h)
-    rect(x, y, w, h);
-    pop();
+    for (var x = 0; x < windowWidth; x += pixel) {
+		for (var y = 0; y < windowHeight; y += pixel) {
+			var perlin =  noise(x * noiseScale, y * noiseScale, frameCount * noiseVelocity);
+            let perlinColor = map(perlin, 0, 1, 0, 255);
+            noStroke();
+			fill(perlinColor);
+			rect(x, y, pixel, pixel);
+		}		
+  	}
 }
-}
+
 
 
 

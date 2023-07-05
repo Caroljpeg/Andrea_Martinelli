@@ -1,11 +1,8 @@
-let rowsSeed;
-let columnsSeed;
-
+let date = new Date();
+let hours = date.getHours();
 
 function setup(){
     createCanvas(windowWidth, windowHeight);
-    rowsSeed = int(random(1, 50));
-    columnsSeed = int(random(1, 2));
 }
 
 function draw(){
@@ -17,50 +14,23 @@ function draw(){
 
 
 
-function backgroundNoise(){
-    fill('#E6E6E6');
-    stroke('#E6E6E6');
-    strokeCap(SQUARE);
+function backgroundNoise2() {
+    let noiseScale = 0.001;
+    let noiseVelocity = map(hours, 0, 23, 0.02, 0.001);
 
-    let columns = columnsSeed;
-    let rows = rowsSeed;
-    let cellsCount = columns * rows;
+    noiseDetail(2, 2);
 
-    let gridWidth = windowWidth;
-    let gridHeight = windowHeight;
-    let cellWidth = gridWidth / columns;
-    let cellHeight = gridHeight / rows;
-    let marginX = (windowWidth - gridWidth) * 0.8;
-    let marginY = (windowHeight - gridHeight) * 0.8;
+    let pixel = 10;
 
-    for (let a = 0; a < cellsCount; a++){
-        let column = a % columns;
-        let row = floor(a/columns);
-
-        let x = column * cellWidth;
-        let y = row * cellHeight;
-        let w = cellWidth * 0.8;
-        let h = cellHeight * 0.8;
-
-        let noiseScale = 0.001;
-
-        let perlin = noise(x * noiseScale, y * noiseScale, frameCount * 0.01);
-        let perlinN = map(perlin, 0, 1, -1, 1);
-        let angle = perlinN * TWO_PI * 0.2;
-        let scale = map(perlinN, -1, 1, 0, 20);
-
-        push();
-        translate(x, y);
-        translate(marginX, marginY);
-        translate(w * 0.5, h * 0.5)
-        rotate(angle);
-
-        strokeWeight(scale);
-
-        line(w * -0.5, 0, w * 0.5, 0)
-
-        pop();
-    }
+    for (var x = 0; x < windowWidth; x += pixel) {
+		for (var y = 0; y < windowHeight; y += pixel) {
+			var perlin =  noise(x * noiseScale, y * noiseScale, frameCount * noiseVelocity);
+            let perlinColor = map(perlin, 0, 1, 0, 255);
+            noStroke();
+			fill(perlinColor);
+			rect(x, y, pixel, pixel);
+		}		
+  	}
 }
 
 function windowResized() {
