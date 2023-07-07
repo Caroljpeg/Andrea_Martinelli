@@ -14,13 +14,13 @@ function draw(){
 
 
 
-function backgroundNoise2() {
-    let noiseScale = 0.001;
+function backgroundNoise() {
+    let noiseScale = 0.0005;
     let noiseVelocity = map(hours, 0, 23, 0.02, 0.001);
 
     noiseDetail(2, 2);
 
-    let pixel = 10;
+    let pixel = 20;
 
     for (var x = 0; x < windowWidth; x += pixel) {
 		for (var y = 0; y < windowHeight; y += pixel) {

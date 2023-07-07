@@ -240,7 +240,7 @@ function backgroundNoise2() {
 
     noiseDetail(2, 2);
 
-    let pixel = 10;
+    let pixel = 20;
 
     for (var x = 0; x < windowWidth; x += pixel) {
 		for (var y = 0; y < windowHeight; y += pixel) {
