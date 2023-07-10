@@ -54,6 +54,7 @@ body {
   cursor: text;
 
   font-family: 'Helvetica neue';
+  font-size: 1vw;
   text-transform: uppercase;
 }
 
@@ -433,13 +434,14 @@ td {
 }
 
 #abstract {
-  position: relative;
-  top: 91.66%;
+  position: absolute;
+  top: 65%;
 
   width: 100%;
 
-  font-size: 200%;
+  font-size: 2vw;
   text-align: justify;
+  line-height: 100%;
 }
 
 #media1 {
@@ -473,6 +475,11 @@ td {
 
 
 @media (max-width: 768px) {
+
+  body {
+    font-size: 3vw;
+  }
+
   #responsive {
     display: none;
   }
