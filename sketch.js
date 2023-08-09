@@ -88,7 +88,7 @@ function draw() {
 
 
     noFill();
-    stroke('#1A1A1A');
+    stroke('#0000FC');
     strokeWeight(1);
     if (about.style.display == 'block') {
         beginShape();
@@ -247,7 +247,7 @@ function backgroundNoise2() {
 			var perlin =  noise(x * noiseScale, y * noiseScale, frameCount * noiseVelocity);
             let perlinColor = map(perlin, 0, 1, 0, 255);
             noStroke();
-			fill(perlinColor);
+			fill(perlinColor, perlinColor, 255);
 			rect(x, y, pixel, pixel);
 		}		
   	}
