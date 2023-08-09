@@ -245,7 +245,7 @@ function backgroundNoise2() {
     for (var x = 0; x < windowWidth; x += pixel) {
 		for (var y = 0; y < windowHeight; y += pixel) {
 			var perlin =  noise(x * noiseScale, y * noiseScale, frameCount * noiseVelocity);
-            let perlinColor = map(perlin, 0, 1, 0, 255);
+            let perlinColor = map(perlin, 0, 1, 1, 255);
             noStroke();
 			fill(perlinColor, perlinColor, 255);
 			rect(x, y, pixel, pixel);
