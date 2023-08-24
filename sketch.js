@@ -2,10 +2,8 @@ let andrea;
 let about;
 let works;
 let contacts;
-let editory;
-let audovisual;
-let installations;
-let threed;
+let projectsSection;
+let experimentsSection;
 let email;
 let phone;
 let instagram;
@@ -24,10 +22,8 @@ function draw() {
     works = document.getElementById('works');
     contacts = document.getElementById('contacts');
 
-    editory = document.getElementById('editory');
-    audiovisual = document.getElementById('audiovisual');
-    installations = document.getElementById('installations');
-    threed = document.getElementById('threed');
+    projectsSection = document.getElementById('projectsSection');
+    experimentsSection = document.getElementById('experimentsSection');
 
     email = document.getElementById('email');
     phone = document.getElementById('phone');
@@ -50,21 +46,13 @@ function draw() {
     let contactsYpos = contacts.offsetTop;
 
 
-    let editoryXPos = editory.offsetLeft;
-    let editoryHeight = editory.offsetHeight;
-    let editoryYpos = editory.offsetTop;
+    let projectsSectionXPos = projectsSection.offsetLeft;
+    let projectsSectionHeight = projectsSection.offsetHeight;
+    let projectsSectionYpos = projectsSection.offsetTop;
 
-    let audiovisualXPos = audiovisual.offsetLeft;
-    let audiovisualHeight = audiovisual.offsetHeight;
-    let audiovisualYpos = audiovisual.offsetTop;
-
-    let installationsXPos = installations.offsetLeft;
-    let installationsHeight = installations.offsetHeight;
-    let installationsYpos = installations.offsetTop;
-
-    let threedXPos = threed.offsetLeft;
-    let threedHeight = threed.offsetHeight;
-    let threedYpos = threed.offsetTop;
+    let experimentsSectionXPos = experimentsSection.offsetLeft;
+    let experimentsSectionHeight = experimentsSection.offsetHeight;
+    let experimentsSectionYpos = experimentsSection.offsetTop;
 
     let emailXPos = email.offsetLeft;
     let emailHeight = email.offsetHeight;
@@ -118,35 +106,19 @@ function draw() {
 
 
 
-    if (editory.style.display == 'block') {
+    if (projectsSection.style.display == 'block') {
         beginShape();
         vertex(worksXPos, worksYpos + 20 + worksHeight);
-        vertex(worksXPos, editoryYpos + (editoryHeight / 2));
-        vertex(editoryXPos - 20, editoryYpos + (editoryHeight / 2));
+        vertex(worksXPos, projectsSectionYpos + (projectsSectionHeight / 2));
+        vertex(projectsSectionXPos - 20, projectsSectionYpos + (projectsSectionHeight / 2));
         endShape();
     }
 
-    if (audiovisual.style.display == 'block') {
+    if (experimentsSection.style.display == 'block') {
         beginShape();
         vertex(worksXPos, worksYpos + 20 + worksHeight);
-        vertex(worksXPos, audiovisualYpos + (audiovisualHeight / 2));
-        vertex(audiovisualXPos - 20, audiovisualYpos + (audiovisualHeight / 2));
-        endShape();
-    }
-
-    if (installations.style.display == 'block') {
-        beginShape();
-        vertex(worksXPos, worksYpos + 20 + worksHeight);
-        vertex(worksXPos, installationsYpos + (installationsHeight / 2));
-        vertex(installationsXPos - 20, installationsYpos + (installationsHeight / 2));
-        endShape();
-    }
-
-    if (threed.style.display == 'block') {
-        beginShape();
-        vertex(worksXPos, worksYpos + 20 + worksHeight);
-        vertex(worksXPos, threedYpos + (threedHeight / 2));
-        vertex(threedXPos - 20, threedYpos + (threedHeight / 2));
+        vertex(worksXPos, experimentsSectionYpos + (experimentsSectionHeight / 2));
+        vertex(experimentsSectionXPos - 20, experimentsSectionYpos + (experimentsSectionHeight / 2));
         endShape();
     }
 
@@ -262,10 +234,8 @@ function revealSections() {
     works = document.getElementById('works');
     contacts = document.getElementById('contacts');
 
-    editory = document.getElementById('editory');
-    audiovisual = document.getElementById('audiovisual');
-    installations = document.getElementById('installations');
-    threed = document.getElementById('threed');
+    projectsSection = document.getElementById('projectsSection');
+    experimentsSection = document.getElementById('experimentsSection');
 
     email = document.getElementById('email');
     phone = document.getElementById('phone');
@@ -280,10 +250,8 @@ function revealSections() {
         works.style.display = 'none';
         contacts.style.display = 'none';
 
-        editory.style.display = 'none';
-        audiovisual.style.display = 'none';
-        installations.style.display = 'none';
-        threed.style.display = 'none';
+        projectsSection.style.display = 'none';
+        experimentsSection.style.display = 'none';
 
         contacts.style.top = '41.66%';
         email.style.top = '50%';
@@ -303,35 +271,30 @@ function revealSections() {
 function revealSubSections() {
     contacts = document.getElementById('contacts');
 
-    editory = document.getElementById('editory');
-    audiovisual = document.getElementById('audiovisual');
-    installations = document.getElementById('installations');
-    threed = document.getElementById('threed');
+    projectsSection = document.getElementById('projectsSection');
+    experimentsSection = document.getElementById('experimentsSection');
 
     email = document.getElementById('email');
     phone = document.getElementById('phone');
     instagram = document.getElementById('instagram');
 
-    if (editory.style.display == 'none' || editory.style.display == '') {
+    if (projectsSection.style.display == 'none' || projectsSection.style.display == '') {
         contacts.style.top = '66.66%';
         email.style.top = '75%';
         phone.style.top = '79.16%';
         instagram.style.top = '83.33%';
 
-        editory.style.display = 'block';
-        audiovisual.style.display = 'block';
-        installations.style.display = 'block';
-        threed.style.display = 'block';
+        projectsSection.style.display = 'block';
+        experimentsSection.style.display = 'block';
+
     } else {
         contacts.style.top = '41.66%';
         email.style.top = '50%';
         phone.style.top = '54.16%';
         instagram.style.top = '58.33%';
 
-        editory.style.display = 'none';
-        audiovisual.style.display = 'none';
-        installations.style.display = 'none';
-        threed.style.display = 'none';
+        projectsSection.style.display = 'none';
+        experimentsSection.style.display = 'none';
     }
 }
 
