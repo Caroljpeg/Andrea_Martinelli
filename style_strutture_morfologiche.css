@@ -1,0 +1,130 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  cursor: text;
+
+  font-family: 'Helvetica neue';
+  font-size: 100%;
+  text-transform: uppercase;
+}
+
+
+
+#name {
+    position: absolute;
+    top: 8.33%;
+    left: 8.33%;
+  
+    color: black;
+    text-decoration: underline;
+}
+
+#chapter1 {
+    position: absolute;
+    top: 16.66%;
+    left: 16.66%;
+  
+    color: black;
+    text-decoration: underline;
+}
+
+#chapter2 {
+    position: absolute;
+    top: 25%;
+    left: 16.66%;
+  
+    color: black;
+    text-decoration: underline;
+}
+
+#chapter3 {
+    position: absolute;
+    top: 33.33%;
+    left: 16.66%;
+  
+    color: black;
+    text-decoration: underline;
+}
+
+#chapter4 {
+    position: absolute;
+    top: 41.66%;
+    left: 16.66%;
+  
+    color: black;
+    text-decoration: underline;
+}
+
+#chapter5 {
+    position: absolute;
+    top: 50%;
+    left: 16.66%;
+  
+    color: black;
+    text-decoration: underline;
+}
+
+
+
+
+
+#image1{
+    display: none;
+
+    position: absolute;
+
+    overflow-x: scroll;
+
+    top: 16.66%;
+    left: 55%;
+    height: 75%;
+}
+
+#image2{
+    display: none;
+
+    position: absolute;
+
+    overflow-x: scroll;
+
+    top: 16.66%;
+    left: 55%;
+    height: 75%;
+}
+
+#image3{
+    display: none;
+
+    position: absolute;
+
+    overflow-x: scroll;
+
+    top: 16.66%;
+    left: 55%;
+    height: 75%;
+}
+
+#image4{
+    display: none;
+
+    position: absolute;
+
+    overflow-x: scroll;
+
+    top: 16.66%;
+    left: 55%;
+    height: 75%;
+}
+
+#image5{
+    display: none;
+
+    position: absolute;
+
+    overflow-x: scroll;
+
+    top: 16.66%;
+    left: 55%;
+    height: 75%;
+}
