@@ -17,7 +17,6 @@ body {
     left: 8.33%;
   
     color: black;
-    text-decoration: underline;
 }
 
 #chapter1 {
@@ -127,4 +126,73 @@ body {
     top: 16.66%;
     left: 55%;
     height: 75%;
+}
+
+
+
+
+@media (max-width: 1000px) {
+    html,
+    body {
+        font-size: 80%;
+    }
+
+    #chapter1 {
+        top: 15%;
+        left: 16.66%;
+    }
+    
+    #chapter2 {
+        top: 20%;
+        left: 16.66%;
+    }
+    
+    #chapter3 {
+        top: 25%;
+        left: 16.66%;
+    }
+    
+    #chapter4 {
+        top: 30%;
+        left: 16.66%;
+    }
+    
+    #chapter5 {
+        top: 35%;
+        left: 16.66%;
+    }
+
+
+
+
+
+    #image1{
+        top: 40%;
+        left: 16.66%;
+        height: 100%;
+    }
+    
+    #image2{
+        top: 40%;
+        left: 16.66%;
+        height: 100%;
+    }
+    
+    #image3{
+        top: 40%;
+        left: 16.66%;
+        height: 100%;
+    }
+    
+    #image4{
+        top: 40%;
+        left: 16.66%;
+        height: 100%;
+    }
+    
+    #image5{
+        top: 40%;
+        left: 16.66%;
+        height: 100%;
+    }
 }
