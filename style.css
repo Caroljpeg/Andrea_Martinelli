@@ -397,6 +397,15 @@ td {
   color: #ffffff;
 }
 
+#backgroundImage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  height: 75%;
+}
+
 #mainPicture {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
