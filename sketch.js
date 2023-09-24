@@ -280,9 +280,9 @@ function revealSubSections() {
 
     if (projectsSection.style.display == 'none' || projectsSection.style.display == '') {
         contacts.style.top = '50%';
-        email.style.top = '54.16%';
-        phone.style.top = '58.33%';
-        instagram.style.top = '62.16%';
+        email.style.top = '58.33%';
+        phone.style.top = '62.16%';
+        instagram.style.top = '66.66%';
 
         projectsSection.style.display = 'block';
         experimentsSection.style.display = 'block';
