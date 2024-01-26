@@ -143,13 +143,14 @@ button:hover {
   }
 
   #bannerTop {
+    top: 5vh;
     font-size: 4vh;
     line-height: 4vh;
   }
   
   #bannerBottom {
     height: 20vh;
-    top: 80vh;
+    top: 75vh;
     font-size: 4vh;
     line-height: 4vh;
   }
