@@ -114,11 +114,13 @@ a {
 
 #profile {
   display: block;
+  overflow-y: auto;
 
   position: absolute;
-  top: 25%;
+  top: 33.33%;
+  height: 50%;
   left: 25%;
-  width: 33.33%;
+  width: 50%;
 
   color: #0000FC;
   text-align: justify;
@@ -130,7 +132,7 @@ a {
   position: absolute;
   top: 50%;
   left: 25%;
-  width: 33.33%;
+  width: 50%;
 
   color: #0000FC;
   text-align: justify;
@@ -142,7 +144,7 @@ a {
   position: absolute;
   top: 75%;
   left: 25%;
-  width: 33.33%;
+  width: 50%;
 
   color: #0000FC;
   text-align: justify;
@@ -298,6 +300,7 @@ a {
   color: #ffffff;
   text-decoration: underline;
 }
+
 
 
 
@@ -1255,6 +1258,7 @@ td {
 
 
 
+
 @media (max-width: 1000px) {
 
   body {
@@ -1266,6 +1270,8 @@ td {
   }
 
   #profile {
+    top: 25%;
+    height: 66.66%;
     width: 50%;
   }
 
