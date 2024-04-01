@@ -313,6 +313,11 @@ function revealContacts() {
         email.style.display = 'block';
         phone.style.display = 'block';
         instagram.style.display = 'block';
+
+        contacts.style.top = '45vh';
+        email.style.top = '55vh';
+        phone.style.top = '60vh';
+        instagram.style.top = '65vh';
     } else {
         email.style.display = 'none';
         phone.style.display = 'none';
