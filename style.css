@@ -1,53 +1,7 @@
-.col-1 {
-  width: 8.33%
-}
-
-.col-2 {
-  width: 16.66%
-}
-
-.col-3 {
-  width: 25%
-}
-
-.col-4 {
-  width: 33.33%
-}
-
-.col-5 {
-  width: 41.66%
-}
-
-.col-6 {
-  width: 50%
-}
-
-.col-7 {
-  width: 58.33%
-}
-
-.col-8 {
-  width: 66.66%
-}
-
-.col-9 {
-  width: 75%
-}
-
-.col-10 {
-  width: 83.33%
-}
-
-.col-11 {
-  width: 91.66%
-}
-
-.col-12 {
-  width: 100%
-}
-
 html,
 body {
+  display: flex;
+
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -56,6 +10,7 @@ body {
   font-family: 'Helvetica neue';
   font-size: 100%;
   text-transform: uppercase;
+  text-align: justify;
 }
 
 a {
@@ -69,8 +24,8 @@ a {
 
 #name {
   position: absolute;
-  top: 8.33%;
-  left: 8.33%;
+  top: 5vw;
+  left: 5vw;
 
   color: #0000FC;
   text-decoration: underline;
@@ -86,6 +41,11 @@ a {
   font-style: italic;
 }
 
+#bold {
+  color: #ffffff;
+  background-color: #000000;
+}
+
 #underline {
   text-decoration: underline;
 }
@@ -98,8 +58,8 @@ a {
   display: none;
 
   position: absolute;
-  top: 25%;
-  left: 25%;
+  top: 25vh;
+  left: 25vw;
 
   color: #0000FC;
   text-align: justify;
@@ -114,40 +74,26 @@ a {
 
 #profile {
   display: block;
-  overflow-y: auto;
+  overflow: auto;
 
   position: absolute;
-  top: 33.33%;
-  height: 50%;
-  left: 25%;
-  width: 50%;
+  top: 20vh;
+  height: 65vh;
+  left: 20vw;
+  width: 60vw;
 
   color: #0000FC;
   text-align: justify;
+  align-content:center;
+  text-indent: 5vw;
 }
 
 #education {
-  display: block;
-
-  position: absolute;
-  top: 50%;
-  left: 25%;
-  width: 50%;
-
-  color: #0000FC;
-  text-align: justify;
+  padding-left: 15vw; 
 }
 
 #professional {
-  display: block;
-
-  position: absolute;
-  top: 75%;
-  left: 25%;
-  width: 50%;
-
-  color: #0000FC;
-  text-align: justify;
+  padding-left: 10vw
 }
 
 #job {
@@ -185,8 +131,8 @@ a {
   display: none;
 
   position: absolute;
-  top: 33.33%;
-  left: 25%;
+  top: 35vh;
+  left: 25vw;
 
   color: #0000FC;
   text-decoration: underline;
@@ -203,8 +149,8 @@ a {
   display: none;
 
   position: absolute;
-  top: 41.66%;
-  left: 41.66%;
+  top: 45vh;
+  left: 50vw;
 
   color: #0000FC;
 }
@@ -219,8 +165,8 @@ a {
   display: none;
 
   position: absolute;
-  top: 45.82%;
-  left: 41.66%;
+  top: 50vh;
+  left: 50vw;
 
   color: #0000FC;
 }
@@ -239,8 +185,8 @@ a {
   display: none;
 
   position: absolute;
-  top: 41.66%;
-  left: 25%;
+  top: 45vh;
+  left: 25vw;
 
   color: #0000FC;
   text-decoration: underline;
@@ -257,8 +203,8 @@ a {
   display: none;
 
   position: absolute;
-  top: 50%;
-  left: 58.33%;
+  top: 70vh;
+  left: 50vw;
 
   color: #0000FC;
 }
@@ -273,8 +219,8 @@ a {
   display: none;
 
   position: absolute;
-  top: 54.16%;
-  left: 58.33%;
+  top: 75vh;
+  left: 50vw;
 
   color: #0000FC;
 }
@@ -289,8 +235,8 @@ a {
   display: none;
 
   position: absolute;
-  top: 58.33%;
-  left: 58.33%;
+  top: 80vh;
+  left: 50vw;
 
   color: #0000FC;
 }
@@ -310,10 +256,9 @@ a {
 
 
 
-
 table {
   table-layout: fixed;
-  width: 66.33%;
+  width: 90vw;
 
   color: #0000FC;
 }
@@ -326,8 +271,8 @@ td {
 
 #projects {
   position: absolute;
-  top: 25%;
-  left: 25%;
+  top: 25vh;
+  left: 10vw;
 }
 
 #team {
@@ -366,11 +311,11 @@ td {
   overflow-x: hidden;
   overflow-y: scroll;
   position: absolute;
-  top: 16.66%;
-  left: 8.33%;
+  top: 15vh;
+  left: 10vw;
 
-  height: 75%;
-  width: 83.66%;
+  height: 75vh;
+  width: 80vw;
 
   z-index: 0;
 }
@@ -427,7 +372,7 @@ td {
 
 #abstract {
   margin-top: 50px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   padding: 5%;
 
   grid-column-start: 1;
@@ -436,18 +381,18 @@ td {
   grid-row-start: 3;
   grid-row-end: 4;
 
-  font-size: 2vw;
+  font-size: 200%;
   text-align: justify;
   line-height: 100%;
-
+  text-indent: 5vw;
 }
 
 #quote {
   margin-top: 50px;
   margin-bottom: 50px;
-  padding: 5%;
+  padding: 5vw;
 
-  font-size: 1.5vw;
+  font-size: 150%;
   font-style: italic;
   text-align:justify;
   line-height: 100%;
@@ -463,44 +408,32 @@ td {
   -webkit-box-sizing: border-box;
 
   width: 100%;
-  height: 35vw;
+  height: 75vh;
 
   border: 2px solid;
 }
 
 #previousProject {
-  margin-top: 2%;
-  margin-bottom: 5%;
-  grid-column-start: 1;
-  grid-column-end: 2;
-
-  grid-row-start: 20;
-  grid-row-end: 21;
-
+  width: 30vw;
+  position: absolute;
+  top: 95vh;
+  left: 5vw;
   text-align: left;
 }
 
 #projectsList {
-  margin-top: 2%;
-  margin-bottom: 5%;
-  grid-column-start: 2;
-  grid-column-end: 4;
-
-  grid-row-start: 20;
-  grid-row-end: 21;
-
+  width: 30vw;
+  position: absolute;
+  top: 95vh;
+  left: 30vw;
   text-align: center;
 }
 
 #nextProject {
-  margin-top: 2%;
-  margin-bottom: 5%;
-  grid-column-start: 4;
-  grid-column-end: 5;
-
-  grid-row-start: 20;
-  grid-row-end: 21;
-
+  width: 30vw;
+  position: absolute;
+  top: 95vh;
+  left: 65vw;
   text-align: right;
 }
 
@@ -1262,7 +1195,7 @@ td {
 @media (max-width: 1000px) {
 
   body {
-    font-size: 3vw;
+    font-size: 70%;
   }
 
   #responsive {
@@ -1270,31 +1203,31 @@ td {
   }
 
   #profile {
-    top: 25%;
-    height: 66.66%;
-    width: 50%;
+    top: 10vh;
+    height: 80vh;
+    left: 5vw;
+    width: 90vw;
   }
 
   #education {
-    top: 41.66%;
-    width: 50%;
+    padding-left: 0vw;
   }
 
   #professional {
-    top: 70.82%;
-    width: 50%;
+    padding-left: 0vw;
   }
 
   table {
-    width: 83.33%;
+    width: 90vw;
   }
 
   #projects {
-    left: 8.33%;
+    left: 5vw;
   }
 
   #projectPage {
-    top: 15.66%;
+    top: 10vh;
+    height: 80vh;
   }
   
   #backgroundImage {
@@ -1333,15 +1266,15 @@ td {
     grid-row-start: 3;
     grid-row-end: 4;
 
-    font-size: 3vw;
+    font-size: 120%;
   }
   
   #quote {  
-    font-size: 3vw;
+    font-size: 80%;
   }
   
   #embeddedVideo {
     width: 100%;
-    height: 35vw;
+    height: 20vh;
   }
 }

@@ -253,10 +253,10 @@ function revealSections() {
         projectsSection.style.display = 'none';
         experimentsSection.style.display = 'none';
 
-        contacts.style.top = '41.66%';
-        email.style.top = '50%';
-        phone.style.top = '58.33%';
-        instagram.style.top = '66.66%';
+        contacts.style.top = '45vh';
+        email.style.top = '55vh';
+        phone.style.top = '60vh';
+        instagram.style.top = '65vh';
 
         email.style.display = 'none';
         phone.style.display = 'none';
@@ -279,19 +279,19 @@ function revealSubSections() {
     instagram = document.getElementById('instagram');
 
     if (projectsSection.style.display == 'none' || projectsSection.style.display == '') {
-        contacts.style.top = '50%';
-        email.style.top = '58.33%';
-        phone.style.top = '62.16%';
-        instagram.style.top = '66.66%';
+        contacts.style.top = '60vh';
+        email.style.top = '70vh';
+        phone.style.top = '75vh';
+        instagram.style.top = '80vh';
 
         projectsSection.style.display = 'block';
         experimentsSection.style.display = 'block';
 
     } else {
-        contacts.style.top = '41.66%';
-        email.style.top = '50%';
-        phone.style.top = '54.16%';
-        instagram.style.top = '58.33%';
+        contacts.style.top = '45vh';
+        email.style.top = '55vh';
+        phone.style.top = '60vh';
+        instagram.style.top = '65vh';
 
         projectsSection.style.display = 'none';
         experimentsSection.style.display = 'none';
