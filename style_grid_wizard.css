@@ -1,0 +1,34 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  cursor: text;
+
+  font-family: 'Helvetica neue';
+  font-size: 100%;
+}
+
+a {
+  cursor: text;
+}
+
+#text1,
+#text2 {
+  position: absolute;
+  text-align: justify;
+  font-size: 100%;
+}
+
+
+
+
+
+@media (max-width: 800px) {
+  #text1{
+    font-size: 50%;
+  }
+  #text2{
+    font-size: 50%;
+  }
+}
