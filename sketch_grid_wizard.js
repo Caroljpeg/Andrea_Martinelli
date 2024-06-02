@@ -1,12 +1,15 @@
+let timer = 0;
+let timer2 = 0;
+
 let methodNumber;
 let areasRatio = 0.1;
 let EEAAPRColumns = 6;
 let IKASAILIShortSideSubdivisions = 6;
-let IKASAILIGutter = 20;
+let IKASAILIGutter = 15;
 let GFlippingPreferences = [];
 let GHorizontalFlip;
 let GVerticalFlip;
-let GSubdivisionsNumber = 6 
+let GSubdivisionsNumber = 7; 
 
 let margins = [];
 let verticalGuides = [];
@@ -26,25 +29,27 @@ function setup() {
     text3 = document.getElementById('text3');
     text4 = document.getElementById('text4');
 
-    // methodNumber = Math.round(random(0, 1));
-    methodNumber = 2;
-
-    if (methodNumber == 0) {
-        everythingEverywhereAllAtPageRatio(areasRatio, EEAAPRColumns)
-    } else if (methodNumber == 1) {
-        IKissedASquareAndILikedIt(areasRatio, IKASAILIShortSideSubdivisions, IKASAILIGutter)
-    } else if (methodNumber == 2) {
-        // GHorizontalFlip = random(['horizontallyStandard', 'horizontallyFlipped']);
-        // GVerticalFlip = random(['verticallyStandard', 'verticallyFlipped']);
-        GFlippingPreferences.push('horizontallyFlipped', 'verticallyStandard');
-        gutenbergify(GFlippingPreferences, GSubdivisionsNumber);
-    }
-
+    methodNumber = Math.round(random(0, 2));
+    drawGrid();
     positionTexts();
 }
 
 function draw() {
-    clear();
+    if (millis() >= 2000+timer2) {
+        clear();
+        timer2 = millis();
+    }
+
+    if (millis() >= 1000+timer) {
+        methodNumber = Math.round(random(0, 2));
+        margins = [];
+        verticalGuides = [];
+        horizontalGuides = [];
+        drawGrid();
+        positionTexts();
+        timer = millis();
+    }
+    
     stroke(128, 255, 255);
     strokeWeight(1);
     for (let i = 0; i < verticalGuides.length; i++) {
@@ -65,52 +70,115 @@ function draw() {
     line(0, window.innerHeight - margins[1], window.innerWidth, window.innerHeight - margins[1]);
 }
 
+function drawGrid(){
+    if (methodNumber == 0) {
+        everythingEverywhereAllAtPageRatio(areasRatio, EEAAPRColumns)
+    } else if (methodNumber == 1) {
+        IKissedASquareAndILikedIt(areasRatio, IKASAILIShortSideSubdivisions, IKASAILIGutter)
+    } else if (methodNumber == 2) {
+        gutenbergify(GSubdivisionsNumber);
+    }
+}
+
 function positionTexts() {
+    let textIndentValue, textWidthLarge, textWidthMedium, text1Left, text1Top, text2Left, text2Top, text3Left, text3Top, text4Left, text4Top;
+
+    let menu1Left = verticalGuides[0];
+    let menu1Top = horizontalGuides[0];
+
+    let menu2Left = verticalGuides[4];
+    let menu2Top = horizontalGuides[0];
+
+    let menu3Left = verticalGuides[8];
+    let menu3Top = horizontalGuides[0];
+
+    
+    let textWidthSmall = verticalGuides[3] - margins[3];
+
     let textIndent = 'text-indent';
 
-    let text1Left = verticalGuides[0];
-    let text1Top = horizontalGuides[2];
+    if (methodNumber == 0) {
+        textIndentValue = verticalGuides[4] - margins[3];
 
-    let text2Left = verticalGuides[2];
-    let text2Top = horizontalGuides[Math.round(horizontalGuides.length / 3)];
+        textWidthLarge = verticalGuides[7] - margins[3];
+        textWidthMedium = verticalGuides[5] - margins[3];
 
-    let text3Left = verticalGuides[4];
-    let text3Top = horizontalGuides[Math.round(horizontalGuides.length / 2)];
-    
-    let text4Left = verticalGuides[verticalGuides.length - 6];
-    let text4Top = horizontalGuides[horizontalGuides.length - 2];
+        text1Left = verticalGuides[0];
+        text1Top = horizontalGuides[2];
 
-    menu1.style.left = `${verticalGuides[0]}px`;
-    menu1.style.top = `${horizontalGuides[0]}px`;
-    menu1.style.width = `${verticalGuides[1] - margins[3]}px`;
+        text2Left = verticalGuides[6];
+        text2Top = horizontalGuides[Math.round(horizontalGuides.length / 3)];
 
-    menu2.style.left = `${verticalGuides[4]}px`;
-    menu2.style.top = `${horizontalGuides[0]}px`;
-    menu2.style.width = `${verticalGuides[3] - margins[3]}px`;
+        text3Left = verticalGuides[2];
+        text3Top = horizontalGuides[Math.round(horizontalGuides.length / 2)];
+        
+        text4Left = verticalGuides[verticalGuides.length - 6];
+        text4Top = horizontalGuides[horizontalGuides.length - 2];
+    } else if (methodNumber == 1){
+        textIndentValue = verticalGuides[2] - margins[3];
 
-    menu3.style.left = `${verticalGuides[8]}px`;
-    menu3.style.top = `${horizontalGuides[0]}px`;
-    menu3.style.width = `${verticalGuides[3] - margins[3]}px`;
+        textWidthLarge = verticalGuides[9] - margins[3];
+        textWidthMedium = verticalGuides[5] - margins[3];
+
+        text1Left = verticalGuides[2];
+        text1Top = horizontalGuides[2];
+
+        text2Left = verticalGuides[0];
+        text2Top = horizontalGuides[4];
+
+        text3Left = verticalGuides[2];
+        text3Top = horizontalGuides[6];
+        
+        text4Left = verticalGuides[6];
+        text4Top = horizontalGuides[horizontalGuides.length - 2];
+    } else if (methodNumber == 2) {
+        textIndentValue = verticalGuides[2] - margins[2];
+        
+        textWidthLarge = verticalGuides[7] - margins[3];
+        textWidthMedium = verticalGuides[5] - margins[3];
+
+        text1Left = verticalGuides[2];
+        text1Top = horizontalGuides[2];
+
+        text2Left = verticalGuides[4];
+        text2Top = horizontalGuides[4];
+
+        text3Left = verticalGuides[0];
+        text3Top = horizontalGuides[6];
+        
+        text4Left = verticalGuides[4];
+        text4Top = horizontalGuides[horizontalGuides.length - 2];
+    }
+
+    menu1.style.left = `${menu1Left}px`;
+    menu1.style.top = `${menu1Top}px`;
+
+    menu2.style.left = `${menu2Left}px`;
+    menu2.style.top = `${menu2Top}px`;
+
+    menu3.style.left = `${menu3Left}px`;
+    menu3.style.top = `${menu3Top}px`;
+
 
     text1.style.left = `${text1Left}px`;
     text1.style.top = `${text1Top}px`;
-    text1.style.width = `${verticalGuides[7] - margins[3]}px`;
-    text1.style.textIndent = `${verticalGuides[2] - margins[3]}px`;
+    text1.style.width = `${textWidthLarge}px`;
+    text1.style.textIndent = `${textIndentValue}px`;
 
     text2.style.left = `${text2Left}px`;
     text2.style.top = `${text2Top}px`;
-    text2.style.width = `${verticalGuides[7] - margins[3]}px`;
-    text2.style.textIndent = `${verticalGuides[2] - margins[3]}px`;
+    text2.style.width = `${textWidthMedium}px`;
+    text2.style.textIndent = `${textIndentValue}px`;
 
     text3.style.left = `${text3Left}px`;
     text3.style.top = `${text3Top}px`;
-    text3.style.width = `${verticalGuides[7] - margins[3]}px`;
-    text3.style.textIndent = `${verticalGuides[2] - margins[3]}px`;
+    text3.style.width = `${textWidthLarge}px`;
+    text3.style.textIndent = `${textIndentValue}px`;
 
     text4.style.left = `${text4Left}px`;
     text4.style.top = `${text4Top}px`;
-    text4.style.width = `${verticalGuides[5] - margins[3]}px`;
-    text4.style.textIndent = `${verticalGuides[2] - margins[3]}px`;
+    text4.style.width = `${textWidthMedium}px`;
+    text4.style.textIndent = `${textIndentValue}px`;
 }
 
 
@@ -212,25 +280,15 @@ function IKissedASquareAndILikedIt(areasRatio, shortSideSubdivisions, gutter) {
     margins.push(marginTop, marginBottom, marginLeft, marginRight);
 }
 
-function gutenbergify(flippingPreferences, subdivisionsNumber) {
+function gutenbergify(subdivisionsNumber) {
     let marginTop, marginBottom, marginLeft, marginRight;
     var moduleHeight = window.innerHeight / 9;
 
-    if (flippingPreferences[0] == 'horizontallyStandard') {
-        marginRight = window.innerWidth / 9;
-        marginLeft = (window.innerWidth / 9) * 2;
-    } else if (flippingPreferences[0] == 'horizontallyFlipped') {
-        marginLeft = window.innerWidth / 9;
-        marginRight = (window.innerWidth / 9) * 2;
-    }
+    marginRight = window.innerWidth / 9;
+    marginLeft = (window.innerWidth / 9) * 2;
 
-    if (flippingPreferences[1] == 'verticallyStandard') {
-        marginTop = moduleHeight;
-        marginBottom = moduleHeight * 2;
-    } else if (flippingPreferences[1] == 'verticallyFlipped') {
-        marginBottom = moduleHeight;
-        marginTop = moduleHeight * 2;
-    }
+    marginTop = moduleHeight;
+    marginBottom = moduleHeight * 2;
 
     var rowsHeight = (window.innerHeight - marginTop - marginBottom) / subdivisionsNumber;
     var columnsWidth = (window.innerWidth - marginLeft - marginRight) / subdivisionsNumber;
@@ -273,7 +331,7 @@ function windowResized() {
     } else if (methodNumber == 1) {
         IKissedASquareAndILikedIt(areasRatio, IKASAILIShortSideSubdivisions, IKASAILIGutter)
     } else if (methodNumber == 2) {
-        gutenbergify(GFlippingPreferences, GSubdivisionsNumber);
+        gutenbergify(GSubdivisionsNumber);
     }
 
     positionTexts();

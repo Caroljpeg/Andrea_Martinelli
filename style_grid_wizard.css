@@ -25,7 +25,7 @@ a {
 #text3,
 #text4 {
   position: absolute;
-  font-size: 90%;
+  font-size: 100%;
 }
 
 
@@ -59,25 +59,25 @@ a {
 
 @media (max-width: 800px) {
   #menu1{
-    font-size: 175%;
+    font-size: 200%;
   }
   #menu2{
-    font-size: 175%;
+    font-size: 200%;
   }
   #menu3{
-    font-size: 175%;
+    font-size: 200%;
   }
   
   #text1{
-    font-size: 175%;
+    font-size: 200%;
   }
   #text2{
-    font-size: 175%;
+    font-size: 200%;
   }
   #text3{
-    font-size: 175%;
+    font-size: 200%;
   }
   #text4{
-    font-size: 175%;
+    font-size: 200%;
   }
 }
