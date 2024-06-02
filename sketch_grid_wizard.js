@@ -51,7 +51,7 @@ function draw() {
     }
     
     stroke(128, 255, 255);
-    strokeWeight(1);
+    strokeWeight(0.5);
     for (let i = 0; i < verticalGuides.length; i++) {
         line(verticalGuides[i], 0, verticalGuides[i], window.innerHeight);
     }
@@ -60,12 +60,12 @@ function draw() {
     }
 
     stroke(204, 153, 255);
-    strokeWeight(2);
+    strokeWeight(1);
     line(margins[2], 0, margins[2], window.innerHeight);
     line(window.innerWidth - margins[3], 0, window.innerWidth - margins[3], window.innerHeight);
 
     stroke(255, 167, 255);
-    strokeWeight(2);
+    strokeWeight(1);
     line(0, margins[0], window.innerWidth, margins[0]);
     line(0, window.innerHeight - margins[1], window.innerWidth, window.innerHeight - margins[1]);
 }
