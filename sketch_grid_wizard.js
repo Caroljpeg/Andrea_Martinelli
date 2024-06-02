@@ -1,29 +1,43 @@
 let methodNumber;
 let areasRatio = 0.1;
-let EEAAPRColumns = 7;
+let EEAAPRColumns = 6;
 let IKASAILIShortSideSubdivisions = 6;
 let IKASAILIGutter = 20;
+let GFlippingPreferences = [];
+let GHorizontalFlip;
+let GVerticalFlip;
+let GSubdivisionsNumber = 6 
 
 let margins = [];
 let verticalGuides = [];
 let horizontalGuides = [];
 
-let text1, text2;
-
-function preload(){
-}
+let menu1, menu2, menu3;
+let text1, text2, text3, text4;
 
 function setup() {
     canvas = createCanvas(window.innerWidth, window.innerHeight);
+    menu1 = document.getElementById('menu1');
+    menu2 = document.getElementById('menu2');
+    menu3 = document.getElementById('menu3');
+
     text1 = document.getElementById('text1');
     text2 = document.getElementById('text2');
+    text3 = document.getElementById('text3');
+    text4 = document.getElementById('text4');
 
-    methodNumber = Math.round(random(0, 1));
+    // methodNumber = Math.round(random(0, 1));
+    methodNumber = 2;
 
     if (methodNumber == 0) {
         everythingEverywhereAllAtPageRatio(areasRatio, EEAAPRColumns)
     } else if (methodNumber == 1) {
         IKissedASquareAndILikedIt(areasRatio, IKASAILIShortSideSubdivisions, IKASAILIGutter)
+    } else if (methodNumber == 2) {
+        // GHorizontalFlip = random(['horizontallyStandard', 'horizontallyFlipped']);
+        // GVerticalFlip = random(['verticallyStandard', 'verticallyFlipped']);
+        GFlippingPreferences.push('horizontallyFlipped', 'verticallyStandard');
+        gutenbergify(GFlippingPreferences, GSubdivisionsNumber);
     }
 
     positionTexts();
@@ -54,23 +68,49 @@ function draw() {
 function positionTexts() {
     let textIndent = 'text-indent';
 
-    if (text1) {
-        text1.style.left = `${verticalGuides[0]}px`;
-        text1.style.top = `${horizontalGuides[0]}px`;
+    let text1Left = verticalGuides[0];
+    let text1Top = horizontalGuides[2];
 
-        text1.style.width = `${verticalGuides[7] - margins[3]}px`;
+    let text2Left = verticalGuides[2];
+    let text2Top = horizontalGuides[Math.round(horizontalGuides.length / 3)];
 
-        text1.style.textIndent = `${verticalGuides[2] - margins[3]}px`;
-    }
+    let text3Left = verticalGuides[4];
+    let text3Top = horizontalGuides[Math.round(horizontalGuides.length / 2)];
+    
+    let text4Left = verticalGuides[verticalGuides.length - 6];
+    let text4Top = horizontalGuides[horizontalGuides.length - 2];
 
-    if (text2) {
-        text2.style.left = `${verticalGuides[2]}px`;
-        text2.style.top = `${horizontalGuides[2]}px`;
+    menu1.style.left = `${verticalGuides[0]}px`;
+    menu1.style.top = `${horizontalGuides[0]}px`;
+    menu1.style.width = `${verticalGuides[1] - margins[3]}px`;
 
-        text2.style.width = `${verticalGuides[7] - margins[3]}px`;
+    menu2.style.left = `${verticalGuides[4]}px`;
+    menu2.style.top = `${horizontalGuides[0]}px`;
+    menu2.style.width = `${verticalGuides[3] - margins[3]}px`;
 
-        text2.style.textIndent = `${verticalGuides[2] - margins[3]}px`;
-    }
+    menu3.style.left = `${verticalGuides[8]}px`;
+    menu3.style.top = `${horizontalGuides[0]}px`;
+    menu3.style.width = `${verticalGuides[3] - margins[3]}px`;
+
+    text1.style.left = `${text1Left}px`;
+    text1.style.top = `${text1Top}px`;
+    text1.style.width = `${verticalGuides[7] - margins[3]}px`;
+    text1.style.textIndent = `${verticalGuides[2] - margins[3]}px`;
+
+    text2.style.left = `${text2Left}px`;
+    text2.style.top = `${text2Top}px`;
+    text2.style.width = `${verticalGuides[7] - margins[3]}px`;
+    text2.style.textIndent = `${verticalGuides[2] - margins[3]}px`;
+
+    text3.style.left = `${text3Left}px`;
+    text3.style.top = `${text3Top}px`;
+    text3.style.width = `${verticalGuides[7] - margins[3]}px`;
+    text3.style.textIndent = `${verticalGuides[2] - margins[3]}px`;
+
+    text4.style.left = `${text4Left}px`;
+    text4.style.top = `${text4Top}px`;
+    text4.style.width = `${verticalGuides[5] - margins[3]}px`;
+    text4.style.textIndent = `${verticalGuides[2] - margins[3]}px`;
 }
 
 
@@ -169,7 +209,51 @@ function IKissedASquareAndILikedIt(areasRatio, shortSideSubdivisions, gutter) {
         }
     }
 
-    console.log(window.innerHeight, window.innerWidth);
+    margins.push(marginTop, marginBottom, marginLeft, marginRight);
+}
+
+function gutenbergify(flippingPreferences, subdivisionsNumber) {
+    let marginTop, marginBottom, marginLeft, marginRight;
+    var moduleHeight = window.innerHeight / 9;
+
+    if (flippingPreferences[0] == 'horizontallyStandard') {
+        marginRight = window.innerWidth / 9;
+        marginLeft = (window.innerWidth / 9) * 2;
+    } else if (flippingPreferences[0] == 'horizontallyFlipped') {
+        marginLeft = window.innerWidth / 9;
+        marginRight = (window.innerWidth / 9) * 2;
+    }
+
+    if (flippingPreferences[1] == 'verticallyStandard') {
+        marginTop = moduleHeight;
+        marginBottom = moduleHeight * 2;
+    } else if (flippingPreferences[1] == 'verticallyFlipped') {
+        marginBottom = moduleHeight;
+        marginTop = moduleHeight * 2;
+    }
+
+    var rowsHeight = (window.innerHeight - marginTop - marginBottom) / subdivisionsNumber;
+    var columnsWidth = (window.innerWidth - marginLeft - marginRight) / subdivisionsNumber;
+
+    var guttersHeight = rowsHeight / 9;
+    var guttersWidth = columnsWidth / 9;
+
+    rowsHeight = (window.innerHeight - marginTop - marginBottom - guttersHeight * (subdivisionsNumber - 1)) / subdivisionsNumber;
+    columnsWidth = (window.innerWidth - marginLeft - marginRight - guttersWidth * (subdivisionsNumber - 1)) / subdivisionsNumber;
+
+
+    for (var i = 0; i < subdivisionsNumber; i++) {
+        var xPosition = marginLeft + i * (columnsWidth + guttersWidth);
+
+        verticalGuides.push(xPosition, xPosition + columnsWidth);
+    }
+
+    for (var k = 0; k < subdivisionsNumber; k++) {
+        var yPosition = marginTop + k * (rowsHeight + guttersHeight);
+
+        horizontalGuides.push(yPosition, yPosition + rowsHeight);
+    }
+
     margins.push(marginTop, marginBottom, marginLeft, marginRight);
 }
 
@@ -188,6 +272,8 @@ function windowResized() {
         everythingEverywhereAllAtPageRatio(areasRatio, EEAAPRColumns)
     } else if (methodNumber == 1) {
         IKissedASquareAndILikedIt(areasRatio, IKASAILIShortSideSubdivisions, IKASAILIGutter)
+    } else if (methodNumber == 2) {
+        gutenbergify(GFlippingPreferences, GSubdivisionsNumber);
     }
 
     positionTexts();

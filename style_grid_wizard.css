@@ -6,29 +6,78 @@ body {
   cursor: text;
 
   font-family: 'Helvetica neue';
-  font-size: 100%;
+  font-size: 1vw;
+}
+
+p {
+  margin:0
 }
 
 a {
   cursor: text;
 }
 
+#menu1,
+#menu2,
+#menu3,
 #text1,
-#text2 {
+#text2,
+#text3,
+#text4 {
   position: absolute;
-  text-align: justify;
-  font-size: 100%;
+  font-size: 90%;
 }
 
 
 
 
 
-@media (max-width: 800px) {
+@media (max-width: 1200px) {
+  #menu1{
+    font-size: 150%;
+  }
+  #menu2{
+    font-size: 150%;
+  }
+  #menu3{
+    font-size: 150%;
+  }
+  
   #text1{
-    font-size: 50%;
+    font-size: 150%;
   }
   #text2{
-    font-size: 50%;
+    font-size: 150%;
+  }
+  #text3{
+    font-size: 150%;
+  }
+  #text4{
+    font-size: 150%;
+  }
+}
+
+@media (max-width: 800px) {
+  #menu1{
+    font-size: 175%;
+  }
+  #menu2{
+    font-size: 175%;
+  }
+  #menu3{
+    font-size: 175%;
+  }
+  
+  #text1{
+    font-size: 175%;
+  }
+  #text2{
+    font-size: 175%;
+  }
+  #text3{
+    font-size: 175%;
+  }
+  #text4{
+    font-size: 175%;
   }
 }
