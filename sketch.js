@@ -12,6 +12,17 @@ let instagram;
 let date = new Date();
 let hours = date.getHours();
 
+about = document.getElementById('about');
+works = document.getElementById('works');
+contacts = document.getElementById('contacts');
+
+projectsSection = document.getElementById('projectsSection');
+experimentsSection = document.getElementById('experimentsSection');
+
+email = document.getElementById('email');
+phone = document.getElementById('phone');
+instagram = document.getElementById('instagram');
+
 function setup() {
     createCanvas(windowWidth, windowHeight);
 }
@@ -78,7 +89,7 @@ function draw() {
     noFill();
     stroke('#0000FC');
     strokeWeight(1);
-    if (about.style.display == 'block') {
+    if (about.style.display == 'block' || about.style.display == '') {
         beginShape();
         vertex(homeXPos, homeYpos + homeHeight);
         vertex(homeXPos, aboutYpos + (aboutHeight / 2));
@@ -86,7 +97,7 @@ function draw() {
         endShape();
     }
 
-    if (works.style.display == 'block') {
+    if (works.style.display == 'block' || works.style.display == '') {
         beginShape();
         vertex(homeXPos, homeYpos + homeHeight);
         vertex(homeXPos, worksYpos + (worksHeight / 2));
@@ -94,7 +105,7 @@ function draw() {
         endShape();
     }
 
-    if (contacts.style.display == 'block') {
+    if (contacts.style.display == 'block' || contacts.style.display == '') {
         beginShape();
         vertex(homeXPos, homeYpos + homeHeight);
         vertex(homeXPos, contactsYpos + (contactsHeight / 2));
@@ -208,7 +219,8 @@ function backgroundNoise() {
 
 function backgroundNoise2() {
     let noiseScale = 0.001;
-    let noiseVelocity = map(hours, 0, 23, 0.02, 0.001);
+    // let noiseVelocity = map(hours, 0, 23, 0.1, 0.001);
+    let noiseVelocity = 0.01;
 
     noiseDetail(2, 2);
 
@@ -229,19 +241,13 @@ function backgroundNoise2() {
 
 
 
+
+
+
+
+
 function revealSections() {
-    about = document.getElementById('about');
-    works = document.getElementById('works');
-    contacts = document.getElementById('contacts');
-
-    projectsSection = document.getElementById('projectsSection');
-    experimentsSection = document.getElementById('experimentsSection');
-
-    email = document.getElementById('email');
-    phone = document.getElementById('phone');
-    instagram = document.getElementById('instagram');
-
-    if (about.style.display == 'none' || about.style.display == '') {
+    if (about.style.display == 'none') {
         about.style.display = 'block';
         works.style.display = 'block';
         contacts.style.display = 'block';
@@ -269,15 +275,6 @@ function revealSections() {
 
 
 function revealSubSections() {
-    contacts = document.getElementById('contacts');
-
-    projectsSection = document.getElementById('projectsSection');
-    experimentsSection = document.getElementById('experimentsSection');
-
-    email = document.getElementById('email');
-    phone = document.getElementById('phone');
-    instagram = document.getElementById('instagram');
-
     if (projectsSection.style.display == 'none' || projectsSection.style.display == '') {
         contacts.style.top = '60vh';
         email.style.top = '70vh';
@@ -303,21 +300,22 @@ function revealSubSections() {
 
 
 function revealContacts() {
-    contacts = document.getElementById('contacts');
-
-    email = document.getElementById('email');
-    phone = document.getElementById('phone');
-    instagram = document.getElementById('instagram');
-
     if (email.style.display == 'none' || email.style.display == '') {
         email.style.display = 'block';
         phone.style.display = 'block';
         instagram.style.display = 'block';
 
-        contacts.style.top = '45vh';
-        email.style.top = '55vh';
-        phone.style.top = '60vh';
-        instagram.style.top = '65vh';
+        if (projectsSection.style.display == 'none' || projectsSection.style.display == ''){
+            contacts.style.top = '45vh';
+            email.style.top = '55vh';
+            phone.style.top = '60vh';
+            instagram.style.top = '65vh'
+        } else {
+            contacts.style.top = '60vh';
+            email.style.top = '70vh';
+            phone.style.top = '75vh';
+            instagram.style.top = '80vh';
+        }
     } else {
         email.style.display = 'none';
         phone.style.display = 'none';
