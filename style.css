@@ -56,7 +56,7 @@ a {
 
 
 #about {
-  display: block;
+  display: none;
 
   position: absolute;
   top: 25vh;
@@ -129,7 +129,7 @@ a {
 
 
 #works {
-  display: block;
+  display: none;
 
   position: absolute;
   top: 35vh;
@@ -183,7 +183,7 @@ a {
 
 
 #contacts {
-  display: block;
+  display: none;
 
   position: absolute;
   top: 45vh;

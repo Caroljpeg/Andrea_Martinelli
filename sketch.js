@@ -25,6 +25,14 @@ instagram = document.getElementById('instagram');
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
+
+        about = document.getElementById('about');
+        works = document.getElementById('works');
+        contacts = document.getElementById('contacts');
+
+        about.style.display = 'block';
+        works.style.display = 'block';
+        contacts.style.display = 'block';
 }
 
 function draw() {

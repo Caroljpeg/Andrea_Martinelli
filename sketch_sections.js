@@ -89,6 +89,7 @@ function draw() {
     noFill();
     stroke('#0000FC');
     strokeWeight(1);
+
     if (about.style.display == 'block') {
         beginShape();
         vertex(homeXPos, homeYpos + homeHeight);
