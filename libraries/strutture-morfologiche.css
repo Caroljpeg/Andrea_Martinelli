@@ -1,0 +1,211 @@
+@font-face {
+    font-family: 'timesNewerRomanRegular';
+    src: url('media/fonts/TimesNewerRoman-Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'timesNewerRomanItalic';
+    src: url('media/fonts/TimesNewerRoman-Italic.otf') format('opentype');
+}
+@font-face {
+    font-family: 'timesNewerRomanBoldItalic';
+    src: url('media/fonts/TimesNewerRoman-BoldItalic.otf') format('opentype');
+}
+
+
+
+
+
+html,
+body {
+  display: flex;
+
+  margin: 0;
+  padding: 0;
+
+  font-family: 'timesNewerRomanRegular', serif;
+  font-size: 100%;
+
+  color: #0000FC;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+hr {
+    border: 0.5px solid;
+    color: #0000FC;
+}
+
+a {
+  color: #0000FC;
+  background-color: #ffffff;
+}
+
+a:hover {
+  color: #ffffff;
+  background-color: #0000FC;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#bold {
+  font-family: 'timesNewerRomanBoldItalic', serif;
+}
+
+#italic {
+  font-family: 'timesNewerRomanItalic', serif;
+  font-style: italic;
+}
+
+#underline {
+  text-decoration: underline;
+}
+
+
+
+
+
+#name {
+  position: fixed;
+  top: 2vh;
+  left: 5vw;
+}
+
+#chapter1 {
+    position: absolute;
+    top: 10vh;
+    left: 5vw;
+  
+    color: black;
+    text-decoration: underline;
+}
+
+#chapter2 {
+    position: absolute;
+    top: 12vh;
+    left: 5vw;
+  
+    color: black;
+    text-decoration: underline;
+}
+
+#chapter3 {
+    position: absolute;
+    top: 14vh;
+    left: 5vw;
+  
+    color: black;
+    text-decoration: underline;
+}
+
+#chapter4 {
+    position: absolute;
+    top: 16vh;
+    left: 5vw;
+  
+    color: black;
+    text-decoration: underline;
+}
+
+#chapter5 {
+    position: absolute;
+    top: 18vh;
+    left: 5vw;
+  
+    color: black;
+    text-decoration: underline;
+}
+
+#home {
+    position: absolute;
+    top: 25vh;
+    left: 5vw;
+  
+    color: #0000FC;
+    text-decoration: underline;
+}
+
+#home:hover {  
+    background-color: #0000FC;
+    color: #ffffff;
+}
+
+
+
+
+
+#image1{
+    display: none;
+
+    position: absolute;
+
+    overflow-x: scroll;
+
+    top: 10vh;
+    left: 25vw;
+    height: 75%;
+}
+
+#image2{
+    display: none;
+
+    position: absolute;
+
+    overflow-x: scroll;
+
+    top: 12vh;
+    left: 25vw;
+    height: 75%;
+}
+
+#image3{
+    display: none;
+
+    position: absolute;
+
+    overflow-x: scroll;
+
+    top: 14vh;
+    left: 25vw;
+    height: 75%;
+}
+
+#image4{
+    display: none;
+
+    position: absolute;
+
+    overflow-x: scroll;
+
+    top: 16vh;
+    left: 25vw;
+    height: 75%;
+}
+
+#image5{
+    display: none;
+
+    position: absolute;
+
+    overflow-x: scroll;
+
+    top: 18vh;
+    left: 10vw;
+    height: 75%;
+}
+
+
+
+
+
+#footer {
+  display: block;
+  position: fixed;
+
+  bottom: 2vh;
+  left: 5vw;
+}

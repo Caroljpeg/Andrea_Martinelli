@@ -1,0 +1,181 @@
+@font-face {
+    font-family: 'timesNewerRomanRegular';
+    src: url('media/fonts/TimesNewerRoman-Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'timesNewerRomanItalic';
+    src: url('media/fonts/TimesNewerRoman-Italic.otf') format('opentype');
+}
+@font-face {
+    font-family: 'timesNewerRomanBoldItalic';
+    src: url('media/fonts/TimesNewerRoman-BoldItalic.otf') format('opentype');
+}
+
+
+
+
+
+html,
+body {
+  display: flex;
+
+  margin: 0;
+  padding: 0;
+
+  font-family: 'timesNewerRomanRegular', serif;
+  font-size: 1em;
+
+  color: #0000FC;
+}
+
+#connectorLines {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+
+#connectorLines path {
+  fill: none;
+  stroke: #0000FC;
+  stroke-width: 1px;
+}
+
+a,
+div {
+  position: absolute;
+  color: #0000FC;
+  background-color: #ffffff;
+}
+
+a:hover {
+  color: #ffffff;
+  background-color: #0000FC;
+}
+
+
+
+
+
+#name {
+  position: fixed;
+  top: 2vh;
+  left: 5vw;
+
+  cursor: pointer;
+}
+
+#about {
+  display: block;
+  text-align: justify;
+
+  cursor: pointer;
+}
+
+#work {
+  display: block;
+
+  cursor: pointer;
+}
+
+#contacts {
+  display: block;
+
+  cursor: pointer;
+}
+
+
+
+
+
+#aboutPage {
+  display: block;
+  width: 90vw;
+  height: 90vh;
+
+  position: fixed;
+  top: 10vh;
+  left: 10vw;
+  align-content: center;
+}
+
+
+
+
+
+#projects {
+  display: none;
+
+  cursor: pointer;
+}
+
+#misc {
+  display: none;
+
+  cursor: pointer;
+}
+
+
+
+
+
+#project01,
+#project02,
+#project03,
+#project04,
+#project05 {
+  display: none;
+}
+
+#misc01,
+#misc02 {
+  display: none;
+}
+
+
+
+
+
+#email {
+  display: none;
+}
+
+#phone {
+  display: none;
+}
+
+#instagram {
+  display: none;
+}
+
+
+
+
+
+#footer {
+  display: block;
+  width: 50vw;
+
+  text-align: left;
+  bottom: 2vh;
+  left: 5vw;
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1000px) {
+  html,
+  body {
+    font-size: 0.75em;
+  }
+
+  #connectorLines path {
+  stroke-width: 0.5px;
+}
+}
