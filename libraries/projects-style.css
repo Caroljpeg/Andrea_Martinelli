@@ -144,8 +144,8 @@ a:hover {
 
 #footer {
   display: block;
-  position: fixed;
 
+  position: fixed;
   bottom: 2vh;
   left: 5vw;
 }
