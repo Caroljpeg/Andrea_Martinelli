@@ -1,14 +1,14 @@
 @font-face {
     font-family: 'timesNewerRomanRegular';
-    src: url('media/fonts/TimesNewerRoman-Regular.otf') format('opentype');
+    src: url('../media/fonts/TimesNewerRoman-Regular.otf') format('opentype');
 }
 @font-face {
     font-family: 'timesNewerRomanItalic';
-    src: url('media/fonts/TimesNewerRoman-Italic.otf') format('opentype');
+    src: url('../media/fonts/TimesNewerRoman-Italic.otf') format('opentype');
 }
 @font-face {
     font-family: 'timesNewerRomanBoldItalic';
-    src: url('media/fonts/TimesNewerRoman-BoldItalic.otf') format('opentype');
+    src: url('../media/fonts/TimesNewerRoman-BoldItalic.otf') format('opentype');
 }
 
 
