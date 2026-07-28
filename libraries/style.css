@@ -116,6 +116,8 @@ a:hover {
   align-content: center;
 
   text-indent: 5vw;
+
+  overflow-y: scroll;
 }
 
 #bio {
@@ -221,7 +223,7 @@ a:hover {
 
 
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   html,
   body {
     font-size: 0.75em;
