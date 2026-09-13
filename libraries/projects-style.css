@@ -1,3 +1,31 @@
+/*
+           ▒▒▓▓▓▓▓▓▓▒▒▒         
+       ▒▓▓███▓▓▓▓▓▓▒▒▒▒▒▒▒      
+    ▒▓████▓▒                    
+   ▓████▓▒                      
+  ▓████▓     ▒▓▓████████▓▓▒     
+ ▓████▓    ▓███████████████▓▒   
+▒▓████▒   ▓███▓░       ▒▓████▓░ 
+▒████▓   ░▓██▓           ▓████▓░
+▒████▓    ▓█▓             ▓████▒
+▒████▓    ▓██▒            ▓████▒
+▒████▓    ▒▓██▓▓▒▒▒▒░    ▒█████▒
+▒█████▓    ░▒▓▓█▓▓▒░    ▒█████▓░
+ ▓█████▓               ▓██████▒ 
+ ▒▓█████▓▒           ▓▓█████▓▒  
+  ▒▓█████████▓▓▓▓▓█████████▓    
+    ▒▓██████████████████▓▒      
+        ▒▒▓▓▓▓▓▓▓▓▓▓▒▒          
+
+©2026 Andrea Martinelli
+a website by Andrea Martinelli (@carol__jpg)
+https://caroljpeg.github.io/Andrea_Martinelli/index.html
+*/
+
+
+
+
+
 @font-face {
     font-family: 'timesNewerRomanRegular';
     src: url('../media/fonts/TimesNewerRoman-Regular.otf') format('opentype');
@@ -124,7 +152,7 @@ a:hover {
   border-bottom: 1px solid #5aaafa;
 }
 
-#descriptionColumn::-webkit-scrollbar {
+#imagesColumn::-webkit-scrollbar {
   display: hidden;
 }
 

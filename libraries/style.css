@@ -1,3 +1,31 @@
+/*
+           ▒▒▓▓▓▓▓▓▓▒▒▒         
+       ▒▓▓███▓▓▓▓▓▓▒▒▒▒▒▒▒      
+    ▒▓████▓▒                    
+   ▓████▓▒                      
+  ▓████▓     ▒▓▓████████▓▓▒     
+ ▓████▓    ▓███████████████▓▒   
+▒▓████▒   ▓███▓░       ▒▓████▓░ 
+▒████▓   ░▓██▓           ▓████▓░
+▒████▓    ▓█▓             ▓████▒
+▒████▓    ▓██▒            ▓████▒
+▒████▓    ▒▓██▓▓▒▒▒▒░    ▒█████▒
+▒█████▓    ░▒▓▓█▓▓▒░    ▒█████▓░
+ ▓█████▓               ▓██████▒ 
+ ▒▓█████▓▒           ▓▓█████▓▒  
+  ▒▓█████████▓▓▓▓▓█████████▓    
+    ▒▓██████████████████▓▒      
+        ▒▒▓▓▓▓▓▓▓▓▓▓▒▒          
+
+©2026 Andrea Martinelli
+a website by Andrea Martinelli (@carol__jpg)
+https://caroljpeg.github.io/Andrea_Martinelli/index.html
+*/
+
+
+
+
+
 @font-face {
     font-family: 'timesNewerRomanRegular';
     src: url('../media/fonts/TimesNewerRoman-Regular.otf') format('opentype');
@@ -50,11 +78,6 @@ a:hover {
   background-color: #5aaafa;
 }
 
-div:hover {
-  color: #ffffff;
-  background-color: #5aaafa;
-}
-
 #bold {
   font-family: 'timesNewerRomanBoldItalic', serif;
 }
@@ -80,6 +103,11 @@ div:hover {
   cursor: pointer;
 }
 
+#name:hover {
+  color: #ffffff;
+  background-color: #5aaafa;
+}
+
 #about {
   position: fixed;
 
@@ -97,12 +125,23 @@ div:hover {
   cursor: pointer;
 }
 
+#work:hover {
+  color: #ffffff;
+  background-color: #5aaafa;
+}
+
+
 #contacts {
   position: fixed;
 
   display: block;
 
   cursor: pointer;
+}
+
+#contacts:hover {
+  color: #ffffff;
+  background-color: #5aaafa;
 }
 
 
@@ -153,12 +192,22 @@ div:hover {
   cursor: pointer;
 }
 
+#projects:hover {
+  color: #ffffff;
+  background-color: #5aaafa;
+}
+
 #misc {
   position: fixed;
   
   display: none;
 
   cursor: pointer;
+}
+
+#misc:hover {
+  color: #ffffff;
+  background-color: #5aaafa;
 }
 
 
