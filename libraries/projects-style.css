@@ -27,16 +27,19 @@ https://caroljpeg.github.io/Andrea_Martinelli/index.html
 
 
 @font-face {
-    font-family: 'timesNewerRomanRegular';
-    src: url('../media/fonts/TimesNewerRoman-Regular.otf') format('opentype');
+    font-family: 'typefaceRegular';
+    font-style: normal;
+    src: url('../media/fonts/Production\ Type\ -\ Cardinal\ Fruit\ Regular.otf');
 }
 @font-face {
-    font-family: 'timesNewerRomanItalic';
-    src: url('../media/fonts/TimesNewerRoman-Italic.otf') format('opentype');
+    font-family: 'typefaceItalic';
+    font-style: normal;
+    src: url('../media/fonts/Production\ Type\ -\ Cardinal\ Fruit\ Italic.otf');
 }
 @font-face {
-    font-family: 'timesNewerRomanBoldItalic';
-    src: url('../media/fonts/TimesNewerRoman-BoldItalic.otf') format('opentype');
+    font-family: 'typefaceBoldItalic';
+    font-style: normal;
+    src: url('../media/fonts/Production\ Type\ -\ Cardinal\ Fruit\ Bold\ Italic.otf');
 }
 
 
@@ -50,7 +53,7 @@ body {
   margin: 0;
   padding: 0;
 
-  font-family: 'timesNewerRomanRegular', serif;
+  font-family: 'typefaceRegular', serif;
   font-size: 1em;
 
   color: #5aaafa;
@@ -82,11 +85,11 @@ a:hover {
 }
 
 #bold {
-  font-family: 'timesNewerRomanBoldItalic', serif;
+  font-family: 'typefaceBoldItalic', serif;
 }
 
 #italic {
-  font-family: 'timesNewerRomanItalic', serif;
+  font-family: 'typefaceItalic', serif;
   font-style: italic;
 }
 

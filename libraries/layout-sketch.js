@@ -34,14 +34,14 @@ const miscLinkIds = ['misc01', 'misc02'];
 const contactSubSectionIds = ['email', 'phone', 'instagram'];
 
 const layoutSettings = {
-    nameTop: 2,
+    nameTop: 5,
     rootStartTop: 20,
     itemGap: 5,
 
     nameLeft: 5,
-    rootLeft: 25,
-    subSectionLeft: 50,
-    linkLeft: 75
+    rootLeft: 20,
+    subSectionLeft: 40,
+    linkLeft: 60
 };
 
 const treeStateKey = 'treeState';
