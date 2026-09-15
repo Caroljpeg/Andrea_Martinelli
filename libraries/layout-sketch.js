@@ -21,9 +21,6 @@
 // https://caroljpeg.github.io/Andrea_Martinelli/index.html
 
 
-
-
-
 let sectionsOpen = true;
 let subSectionsOpen = false;
 let projectsOpen = false;
@@ -40,7 +37,7 @@ const layoutSettings = {
     nameTop: 2,
     rootStartTop: 20,
     itemGap: 5,
-    
+
     nameLeft: 5,
     rootLeft: 25,
     subSectionLeft: 50,
@@ -48,6 +45,10 @@ const layoutSettings = {
 };
 
 const treeStateKey = 'treeState';
+
+// Holds one <g> per parent group so each submenu's lines can be
+// redrawn independently instead of wiping the whole SVG every time.
+const lineGroups = {};
 
 function saveTreeState() {
     try {
@@ -86,14 +87,22 @@ function isVisible(node) {
     return node && getComputedStyle(node).display !== 'none';
 }
 
-function clearConnectorLines() {
-    const lineLayer = element('connectorLines');
-    if (lineLayer) lineLayer.innerHTML = '';
+function getGroupLayer(parentId) {
+    const svg = element('connectorLines');
+    let group = lineGroups[parentId];
+
+    if (!group) {
+        group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+        group.setAttribute('data-parent', parentId);
+        svg.appendChild(group);
+        lineGroups[parentId] = group;
+    }
+
+    return group;
 }
 
-function drawConnectorPath(points) {
-    const lineLayer = element('connectorLines');
-    if (!lineLayer || points.length === 0) return;
+function drawConnectorPath(points, group, animate) {
+    if (!group || points.length === 0) return;
 
     const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
     const pathData = points
@@ -101,13 +110,25 @@ function drawConnectorPath(points) {
         .join(' ');
 
     path.setAttribute('d', pathData);
-    lineLayer.appendChild(path);
+    group.appendChild(path);
+
+    const length = path.getTotalLength();
+    path.style.setProperty('--length', length);
+
+    if (animate) {
+        path.classList.add('drawing');
+    } else {
+        path.style.strokeDasharray = length;
+        path.style.strokeDashoffset = 0;
+    }
 }
 
-function drawConnectorGroup(parentId, childIds) {
+function drawConnectorGroup(parentId, childIds, animate) {
     const parent = element(parentId);
-    const visibleChildren = childIds.map(element).filter(isVisible);
+    const group = getGroupLayer(parentId);
+    group.innerHTML = ''; // clears only this group's lines
 
+    const visibleChildren = childIds.map(element).filter(isVisible);
     if (!isVisible(parent) || visibleChildren.length === 0) return;
 
     const parentBox = parent.getBoundingClientRect();
@@ -115,33 +136,27 @@ function drawConnectorGroup(parentId, childIds) {
     const startOffset = 6;
     const trunkX = parentBox.left;
     const trunkStartY = parentBox.bottom + startOffset;
-    const lastChildBox = visibleChildren[visibleChildren.length - 1].getBoundingClientRect();
-    const trunkEndY = lastChildBox.top + lastChildBox.height / 2;
-
-    drawConnectorPath([
-        { x: trunkX, y: trunkStartY },
-        { x: trunkX, y: trunkEndY }
-    ]);
 
     visibleChildren.forEach((child) => {
         const childBox = child.getBoundingClientRect();
         const childY = childBox.top + childBox.height / 2;
         const branchEndX = childBox.left - branchGap;
 
+        // trunk + branch drawn as a single continuous path
         drawConnectorPath([
+            { x: trunkX, y: trunkStartY },
             { x: trunkX, y: childY },
             { x: branchEndX, y: childY }
-        ]);
+        ], group, animate);
     });
 }
 
-function updateConnectorLines() {
-    clearConnectorLines();
-    drawConnectorGroup('name', sectionIds);
-    drawConnectorGroup('work', workSubSectionIds);
-    drawConnectorGroup('projects', projectLinkIds);
-    drawConnectorGroup('misc', miscLinkIds);
-    drawConnectorGroup('contacts', contactSubSectionIds);
+function updateConnectorLines(animateGroup) {
+    drawConnectorGroup('name', sectionIds, animateGroup === 'name');
+    drawConnectorGroup('work', workSubSectionIds, animateGroup === 'work');
+    drawConnectorGroup('projects', projectLinkIds, animateGroup === 'projects');
+    drawConnectorGroup('misc', miscLinkIds, animateGroup === 'misc');
+    drawConnectorGroup('contacts', contactSubSectionIds, animateGroup === 'contacts');
 }
 
 function placeItem(id, top, left) {
@@ -161,7 +176,7 @@ function placeVerticalList(ids, startTop, left) {
     return nextTop;
 }
 
-function updateLayout() {
+function updateLayout(animateGroup) {
 
     // if sectionsOpen is true, the display style is "block", otherwise is "none"
     element('about').style.display = sectionsOpen ? 'block' : 'none';
@@ -211,7 +226,7 @@ function updateLayout() {
         placeVerticalList(contactSubSectionIds, nextTop, layoutSettings.subSectionLeft);
     }
 
-    updateConnectorLines();
+    updateConnectorLines(animateGroup);
 }
 
 function revealSections() {
@@ -223,7 +238,7 @@ function revealSections() {
         contactsOpen = false;
     }
     saveTreeState();
-    updateLayout();
+    updateLayout('name');
 }
 
 function revealSubSections() {
@@ -233,32 +248,32 @@ function revealSubSections() {
         miscOpen = false;
     }
     saveTreeState();
-    updateLayout();
+    updateLayout('work');
 }
 
 function revealProjects() {
     projectsOpen = !projectsOpen;
     saveTreeState();
-    updateLayout();
+    updateLayout('projects');
 }
 
 function revealMisc() {
     miscOpen = !miscOpen;
     saveTreeState();
-    updateLayout();
+    updateLayout('misc');
 }
 
 function revealContacts() {
     contactsOpen = !contactsOpen;
     saveTreeState();
-    updateLayout();
+    updateLayout('contacts');
 }
 
 function initLayout() {
     restoreTreeState();
-    updateLayout();
+    updateLayout(); // no animation on initial load
 }
 
 window.addEventListener('load', initLayout);
 window.addEventListener('pageshow', initLayout);
-window.addEventListener('resize', updateConnectorLines);
+window.addEventListener('resize', () => updateConnectorLines());

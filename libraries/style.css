@@ -63,14 +63,30 @@ body {
 }
 
 #connectorLines path {
-  fill: none;
   stroke: #5aaafa;
-  stroke-width: 1px;
+  stroke-width: 1;
+  fill: none;
+  stroke-dasharray: var(--length);
+  stroke-dashoffset: var(--length);
+  animation: drawLine 0.5s ease forwards;
 }
+
+@keyframes drawLine {
+  to { stroke-dashoffset: 0; }
+}
+
+
+
+
 
 a,
 div {
   color: #5aaafa;
+}
+
+div::-webkit-scrollbar {
+  visibility: hidden;
+  display: hidden;
 }
 
 a:hover {
@@ -94,6 +110,13 @@ a:hover {
 
 
 
+
+.noiseCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
 
 #name {
   position: fixed;
@@ -159,8 +182,10 @@ a:hover {
   align-content: center;
 
   text-indent: 5vw;
+}
 
-  overflow-y: scroll;
+#aboutPage::-webkit-scrollbar {
+  display: none;
 }
 
 #bio {

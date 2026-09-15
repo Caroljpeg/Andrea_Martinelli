@@ -29,9 +29,11 @@ let noiseShader;
 let mainColor;
 let noiseScale, noiseVelocity;
 let currentHour;
+let noiseCanvas;
 
 function setup() {
-    createCanvas(windowWidth, windowHeight);
+    noiseCanvas = createCanvas(windowWidth, windowHeight);
+    noiseCanvas.class('noiseCanvas');
     noiseShader = buildFilterShader(noiseShaderCallback);
 
     currentHour = hour();
