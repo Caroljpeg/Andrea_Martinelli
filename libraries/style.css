@@ -29,17 +29,12 @@ https://caroljpeg.github.io/Andrea_Martinelli/index.html
 @font-face {
     font-family: 'typefaceRegular';
     font-style: normal;
-    src: url('../media/fonts/Production\ Type\ -\ Cardinal\ Fruit\ Regular.otf');
+    src: url('../media/fonts/Sneaky-Times.otf');
 }
 @font-face {
     font-family: 'typefaceItalic';
     font-style: normal;
     src: url('../media/fonts/Production\ Type\ -\ Cardinal\ Fruit\ Italic.otf');
-}
-@font-face {
-    font-family: 'typefaceBoldItalic';
-    font-style: normal;
-    src: url('../media/fonts/Production\ Type\ -\ Cardinal\ Fruit\ Bold\ Italic.otf');
 }
 
 
@@ -95,10 +90,6 @@ div::-webkit-scrollbar {
 a:hover {
   color: #ffffff;
   background-color: #5aaafa;
-}
-
-#bold {
-  font-family: 'typefaceBoldItalic', serif;
 }
 
 #italic {
