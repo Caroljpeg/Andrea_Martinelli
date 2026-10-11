@@ -21,6 +21,9 @@
 // https://caroljpeg.github.io/Andrea_Martinelli/index.html
 
 
+
+
+
 let sectionsOpen = true;
 let subSectionsOpen = false;
 let projectsOpen = false;
@@ -34,11 +37,11 @@ const miscLinkIds = ['misc01', 'misc02'];
 const contactSubSectionIds = ['email', 'phone', 'instagram'];
 
 const layoutSettings = {
-    nameTop: 5,
+    nameTop: 2,
     rootStartTop: 20,
     itemGap: 5,
 
-    nameLeft: 5,
+    nameLeft: 2,
     rootLeft: 20,
     subSectionLeft: 40,
     linkLeft: 60

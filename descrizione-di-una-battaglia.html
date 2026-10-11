@@ -28,15 +28,85 @@ https://caroljpeg.github.io/Andrea_Martinelli/index.html
 
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset = 'utf-8'/>
-    <meta name = 'viewport' content = 'width=device-width, initial-scale=1.0'>
+<head>
+    <meta charset = 'utf-8'>
+    <meta name = 'viewport' content = 'width = device-width, initial-scale = 1.0'>
 
     <title>Andrea Martinelli</title>
     <link rel = 'icon' href = 'media/portrait.jpeg'>
 
     <link rel = 'stylesheet' type = 'text/css' href = 'libraries/projects-style.css'>
 </head>
+
+<body>
+    <a id=  'name' href = 'index.html'>andrea martinelli</a>
+
+    <div id = 'column'>
+        <div class = 'projectTitle italic'>Descrizione di una Battaglia</div>
+        <dl id = 'info'>
+            <dt>year</dt>
+            <dd>2023</dd>
+
+            <dt>external links</dt>
+            <dd>
+                <a href='media/descrizione-di-una-battaglia/descrizione-di-una-battaglia.pdf'>Descrizione di una Battaglia</a><br>
+                <a href='media/descrizione-di-una-battaglia/progettare-un-libro-visivo.pdf'>Progettare un Libro Visivo</a><br>
+                <a href='https://github.com/Caroljpeg/Descrizione_di_una_battaglia'>github repository</a><br>
+                <a href='https://github.com/Caroljpeg/VeinsAndArteriesTool'>veinsAndArteriesTool</a>
+            </dd>
+        </dl>
+
+        <div id = 'navigation'>
+            <a href = 'pomona-artificiale.html'>← previous</a>
+            <a href='index.html'>home</a>
+        </div>
+
+        <br>
+
+        <div id = 'text'>
+            <p class = 'label italic'>Abstract</p>
+            <p><span id = 'italic'>Descrizione di una Battaglia</span> is the project for a book that would visually translate the contents of Alessandro Dal Lago's eponymous essay.
+            The foundation for the project's development lies in a concept that the author himself claims to be the pivotal point of his inquiry: namely, <span class = 'italic'>epoché</span>. <span class = 'italic'>Epoché</span> is a technique deployed in sociology to establish a logical distance from the subject being examined, so that it is possible to observe the "oddities" of an ordinary phenomenon that would otherwise be concealed by the sheen of normality that wraps events taken for granted.</p>
+            <p>That's the reason why soccer, and the complex system of ritual relationships associated with it, are represented by the terms of the human cardiovascular system. This is a powerful metaphorical framework: the meticulousness of clinical practice provides a seamless solution for formal continuity, respecting the scientific credibility of Dal Lago's sociological studies. At the same time, the image of blood, of its flow within the human body and its gush out of wounds, is as culturally reminiscent of the primordiality that distinguishes the pulses of fans as it is of the violence they are victims or authors of.</p>
+            <a href = 'descrizione-di-una-battaglia-extra.html'>[read more...]</a>
+        </div>
+    </div>
+
+
+
+
+
+    <main id="images">
+            <img class = 'slide active' src = 'media/descrizione-di-una-battaglia/descrizione-di-una-battaglia-1.jpeg'>
+            <img class = 'slide' src = 'media/descrizione-di-una-battaglia//descrizione-di-una-battaglia-2.jpeg'>
+            <img class = 'slide' src = 'media/descrizione-di-una-battaglia//descrizione-di-una-battaglia-3.jpeg'>
+            <img class = 'slide' src = 'media/descrizione-di-una-battaglia//descrizione-di-una-battaglia-5.jpeg'>
+            <img class = 'slide' src = 'media/descrizione-di-una-battaglia//descrizione-di-una-battaglia-6.jpeg'>
+            <img class = 'slide' src = 'media/descrizione-di-una-battaglia//descrizione-di-una-battaglia-9.jpeg'>
+            <img class = 'slide' src = 'media/descrizione-di-una-battaglia//descrizione-di-una-battaglia-10.jpeg'>
+            <img class = 'slide' src = 'media/descrizione-di-una-battaglia//descrizione-di-una-battaglia-11.jpeg'>
+            <img class = 'slide' src = 'media/descrizione-di-una-battaglia//descrizione-di-una-battaglia-13.jpeg'>
+            <img class = 'slide' src = 'media/descrizione-di-una-battaglia//descrizione-di-una-battaglia-12.jpeg'>
+    </main>
+
+    <div id="footer">©2026</div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const delay = 2000;
+        let current = 0;
+
+        setInterval(() => {
+            if (document.hidden) return;
+            slides[current].classList.remove('active');
+            // play images in random order
+            // current = Math.floor(Math.random() * slides.length);
+            // play images in sequencial order
+            current = (current + 1) % slides.length;
+            slides[current].classList.add('active');
+        }, delay);
+    </script>
+</body>
 
 <body>
     <a id = 'name' href = 'index.html'>andrea martinelli</a>
@@ -87,26 +157,6 @@ https://caroljpeg.github.io/Andrea_Martinelli/index.html
                 <br>
                 <p>In this way it was possible to ensure a higher degree of readability for the metatextual information and to offer a reading key to the graphic system that integrates the text.</p>
             </div>
-        <br>
-    </div>
-
-    <div id = 'imagesColumn'>
-        <br>
-            <img id = 'image' src = 'media/descrizione-di-una-battaglia/descrizione-di-una-battaglia-1.jpeg'>
-        <hr>
-            <img id = 'image' src = 'media/descrizione-di-una-battaglia//descrizione-di-una-battaglia-2.jpeg'>
-            <img id = 'image' src = 'media/descrizione-di-una-battaglia//descrizione-di-una-battaglia-3.jpeg'>
-        <hr>
-            <img id = 'image' src = 'media/descrizione-di-una-battaglia//descrizione-di-una-battaglia-5.jpeg'>
-            <img id = 'image' src = 'media/descrizione-di-una-battaglia//descrizione-di-una-battaglia-6.jpeg'>
-        <hr>
-            <img id = 'image' src = 'media/descrizione-di-una-battaglia//descrizione-di-una-battaglia-9.jpeg'>
-        <hr>
-            <img id = 'image' src = 'media/descrizione-di-una-battaglia//descrizione-di-una-battaglia-10.jpeg'>
-            <img id = 'image' src = 'media/descrizione-di-una-battaglia//descrizione-di-una-battaglia-11.jpeg'>
-        <hr>
-            <img id = 'image' src = 'media/descrizione-di-una-battaglia//descrizione-di-una-battaglia-13.jpeg'>
-            <img id = 'image' src = 'media/descrizione-di-una-battaglia//descrizione-di-una-battaglia-12.jpeg'>
         <br>
     </div>
 

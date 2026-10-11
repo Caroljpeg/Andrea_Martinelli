@@ -27,68 +27,73 @@ https://caroljpeg.github.io/Andrea_Martinelli/index.html
 
 
 @font-face {
-    font-family: 'typefaceRegular';
-    font-style: normal;
-    src: url('../media/fonts/Sneaky-Times.otf');
+  font-family: 'typefaceRegular';
+  font-style: normal;
+  font-display: swap;
+  src: url('../media/fonts/Sneaky-Times.otf');
 }
 @font-face {
-    font-family: 'typefaceItalic';
-    font-style: normal;
-    src: url('../media/fonts/Production\ Type\ -\ Cardinal\ Fruit\ Italic.otf');
+  font-family: 'typefaceItalic';
+  font-style: normal;
+  font-display: swap;
+  src: url('../media/fonts/Production\ Type\ -\ Cardinal\ Fruit\ Italic.otf');
 }
 
 
 
 
 
-html,
-body {
-  display: flex;
-
-  margin: 0;
-  padding: 0;
-
-  font-family: 'typefaceRegular', serif;
-  font-size: 1em;
-
-  color: #5aaafa;
-}
-
-p {
-    margin: 0;
-    padding: 0;
-}
-
-hr {
-    border: 0.5px solid;
-    color: #5aaafa;
-    padding: 0;
-}
-
-a {
-  color: #5aaafa;
-  background-color: #ffffff;
-}
-
-a:hover {
-  color: #ffffff;
-  background-color: #5aaafa;
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --gap: 2.5vw;
+  --top: 6vh;
 }
 
 * {
   box-sizing: border-box;
 }
 
-#bold {
-  font-family: 'typefaceBoldItalic', serif;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
 }
 
-#italic {
+body {
+  font-family: 'typefaceRegular', serif;
+  font-size: 1em;
+
+  color: var(--white);
+  background-color: var(--white);
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--black);
+  background-color: var(--white);
+  text-decoration: none;
+  outline: none;
+}
+
+.italic {
   font-family: 'typefaceItalic', serif;
   font-style: italic;
 }
 
-#underline {
+.underline {
   text-decoration: underline;
 }
 
@@ -96,126 +101,155 @@ a:hover {
 
 
 
-#name {
+#images {
   position: fixed;
-  top: 2vh;
-  left: 5vw;
+  inset: 0;
+  z-index: 0;
 }
 
-#infoColumn {
-  width: 15vw;
-  height: 90vh;
-
-  position: fixed;
-  top: 5vh;
-  left: 5vw;
-  overflow-y: scroll;
-
-  border-top: 1px solid #5aaafa;
-  border-bottom: 1px solid #5aaafa;
-}
-
-#infoColumn::-webkit-scrollbar {
-  visibility: hidden;
-  display: hidden;
-}
-
-#descriptionColumn {
-  width: 30vw;
-  height: 90vh;
-
-  position: fixed;
-  top: 5vh;
-  left: 20vw;
-  padding-left: 2vw;
-  padding-right: 2vw;
-  overflow-y: scroll;
-
-  text-indent: 5vw;
-
-  border-top: 1px solid #5aaafa;
-  border-bottom: 1px solid #5aaafa;
-}
-
-#descriptionColumn::-webkit-scrollbar {
-  visibility: hidden;
-  display: hidden;
-}
-
-#imagesColumn {
-  width: 45vw;
-  height: 90vh;
-
-  position: fixed;
-  top: 5vh;
-  left: 50vw;
-  overflow-x: hidden;
-  overflow-y: scroll;
-
-  border-top: 1px solid #5aaafa;
-  border-bottom: 1px solid #5aaafa;
-}
-
-#imagesColumn::-webkit-scrollbar {
-  visibility: hidden;
-  display: hidden;
-}
-
-
-
-
-
-#image {
+.slide {
+  position: absolute;
+  inset: 0;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 
-  padding: 0.15vh;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.slide.active {
+  opacity: 1;
 }
 
 
 
 
+
+#name,
+#backToProject,
+#footer,
+#column {
+  position: fixed;
+  z-index: 2;
+  mix-blend-mode: difference;
+}
+
+#name {
+  top: 2vh;
+  left: var(--gap);
+}
+
+#backToProject {
+  top: 2vh;
+  right: var(--gap);
+}
 
 #footer {
-  display: block;
-
-  position: fixed;
   bottom: 2vh;
-  left: 5vw;
+  left: var(--gap);
+}
+
+.projectTitle {
+  font-size: 2vw;
+}
+
+#column {
+  top: 0;
+  bottom: 0;
+  left: var(--gap);
+  margin-block: auto;
+  height: fit-content;
+
+  width: 35vw;
+  max-height: calc(100vh - var(--top) * 2);
+
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+#column::-webkit-scrollbar {
+  display: none;
+}
+
+#info {
+  display: grid;
+  grid-template-columns: 8vw 1fr;
+  column-gap: 2vw;
+}
+
+#info dt,
+#info dd {
+  margin: 0;
+  padding: 0;
+}
+
+#info dt {
+  font-family: 'typefaceItalic', serif;
+  font-style: italic;
+  text-align: right;
+}
+
+#navigation {
+  text-indent: 10vw;
+}
+
+#text {
+  text-indent: 10vw;
+}
+
+.secondaryText {
+  position: fixed;
+  left: 15vw;
+  height: 100vh;
+  width: 70vw;
+
+  font-size: 2.5vw;
+  text-indent: 5vw;
+  line-height: 1;
+
+  overflow-y: scroll;
+  scrollbar-width: none;
+
+  color: var(--black);
+  background-color: var(--white);
+}
+
+.secondaryText::-webkit-scrollbar {
+  display: none;
 }
 
 
 
 
 
+@media (max-width: 1200px) {
+  body {
+    font-size: 1.5vw;
+  }
 
+  #column {
+    width: calc(100vw - var(--gap) * 2);
+    font-size: 1.5vw;
+  }
 
-
-
+  .projectTitle {
+    font-size: 4vw;
+  }
+}
 
 @media (max-width: 1000px) {
-  html,
   body {
-    font-size: 0.75em;
-  }
-  #infoColumn {
-    width: 30vw;
-    height: 35vh;
-
-    border-bottom: none;
+    font-size: 2vw;
   }
 
-  #descriptionColumn {
-    width: 60vw;
-    height: 35vh;
-    left: 35vw;
-
-    border-bottom: none;
+  #column {
+    font-size: 2vw;
   }
+}
 
-  #imagesColumn {
-    width: 90vw;
-    height: 55vh;
-    left: 5vw;
-    top: 40vh;
+@media (prefers-reduced-motion: reduce) {
+  .slide {
+    transition: none;
   }
 }
