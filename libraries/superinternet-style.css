@@ -1,0 +1,61 @@
+/*
+           ▒▒▓▓▓▓▓▓▓▒▒▒         
+       ▒▓▓███▓▓▓▓▓▓▒▒▒▒▒▒▒      
+    ▒▓████▓▒                    
+   ▓████▓▒                      
+  ▓████▓     ▒▓▓████████▓▓▒     
+ ▓████▓    ▓███████████████▓▒   
+▒▓████▒   ▓███▓░       ▒▓████▓░ 
+▒████▓   ░▓██▓           ▓████▓░
+▒████▓    ▓█▓             ▓████▒
+▒████▓    ▓██▒            ▓████▒
+▒████▓    ▒▓██▓▓▒▒▒▒░    ▒█████▒
+▒█████▓    ░▒▓▓█▓▓▒░    ▒█████▓░
+ ▓█████▓               ▓██████▒ 
+ ▒▓█████▓▒           ▓▓█████▓▒  
+  ▒▓█████████▓▓▓▓▓█████████▓    
+    ▒▓██████████████████▓▒      
+        ▒▒▓▓▓▓▓▓▓▓▓▓▒▒          
+
+©2026 Andrea Martinelli
+a website by Andrea Martinelli (@carol__jpg)
+https://caroljpeg.github.io/Andrea_Martinelli/index.html
+*/
+
+
+
+
+
+#name {
+  position: fixed;
+  top: 2vh;
+  left: 2vw;
+  z-index: 10;
+
+  color: #5aaafa;
+}
+
+#name:hover {
+  color: #ffffff;
+  background-color: #5aaafa;
+}
+
+#title {
+  position: absolute;
+  top: 0vh;
+  left: 0vw;
+  height: 100vh;
+  width: 100vw;
+
+  text-align: center;
+  align-content: center;
+}
+
+#footer {
+  position: fixed;
+  text-align: left;
+  bottom: 2vh;
+  left: 2vw;
+
+  color: #5aaafa;
+}

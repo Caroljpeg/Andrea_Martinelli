@@ -246,7 +246,8 @@ p {
 }
 
 #misc01,
-#misc02 {
+#misc02,
+#misc03 {
   position: fixed;
 
   display: none;

@@ -33,18 +33,18 @@ let contactsOpen = false;
 const sectionIds = ['about', 'work', 'contacts'];
 const workSubSectionIds = ['projects', 'misc'];
 const projectLinkIds = ['project01', 'project02', 'project03', 'project04', 'project05'];
-const miscLinkIds = ['misc01', 'misc02'];
+const miscLinkIds = ['misc01', 'misc02', 'misc03'];
 const contactSubSectionIds = ['email', 'phone', 'instagram'];
 
 const layoutSettings = {
     nameTop: 2,
     rootStartTop: 20,
-    itemGap: 5,
+    itemGap: 4,
 
     nameLeft: 2,
     rootLeft: 20,
-    subSectionLeft: 40,
-    linkLeft: 60
+    subSectionLeft: 30,
+    linkLeft: 40
 };
 
 const treeStateKey = 'treeState';
