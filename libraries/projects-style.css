@@ -278,7 +278,7 @@ font-size: 1vw;
 
 @media (max-width: 600px) {
 :root {
---text-height: 40vh;
+--text-height: 50vh;
 --fade: 5vh;
 --fade-dir: to bottom;
 }
