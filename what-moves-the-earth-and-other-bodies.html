@@ -39,7 +39,7 @@ https://caroljpeg.github.io/Andrea_Martinelli/index.html
 </head>
 
 <body>
-    <a id=  'name' href = 'index.html'>andrea martinelli</a>
+    <a id = 'name' href = 'index.html'>andrea martinelli</a>
 
     <div id = 'column'>
         <div class = 'projectTitle italic'>What Moves The Earth And Other Bodies</div>
@@ -67,12 +67,10 @@ https://caroljpeg.github.io/Andrea_Martinelli/index.html
         <div id = 'text'>
             <p class = 'label italic'>Synopsis</p>
             <p>Gravity is the universe’s first relation. That relation shapes the structure of the cosmos, informing the evolution of stars and planetary systems as well as the forms, functions and behaviours of all living beings on Earth. Yet, gravity remains beyond direct human perception.</p>
-            <p><span class = 'italic'>What Moves the Earth And Other Bodies</span> is a mixed-media moving-image work exploring how gravitational waves—and the technologies developed to detect them—mediate the understanding of the universe.</p>
-            <p>Staging an impossible encounter between two versions of the self from different moments in time, the piece weaves live-action footage from the Virgo gravitational-wave observatory, CGI environments, physics simulations and intimate moments of lived experience into a cinematic meditation on how the invisible forces that structure the cosmos also shape the soothing foundations of everyday experience.</p>
-            <p>Moving between cosmic, infrastructural and intimate scales, the movie examines how scientific instruments transform the conditions through which reality is perceived and inhabited.</p>
+            <p><span class = 'italic'>What Moves the Earth And Other Bodies</span> is a mixed-media moving-image work exploring how gravitational waves—and the technologies developed to detect them—mediate the understanding of the universe. Staging an impossible encounter between two versions of the self from different moments in time, the piece weaves live-action footage from the Virgo gravitational-wave observatory, CGI environments, physics simulations and intimate moments of lived experience into a cinematic meditation on how the invisible forces that structure the cosmos also shape the soothing foundations of everyday experience.</p>
             <br>
             <p class = 'label italic'>Distribution</p>
-            <p><span class = 'italic'>What Moves the Earth And Other Bodies</span> premiered at <a href 'https://ddw.nl/nl/locaties/design-academy-eindhoven-graduation-show-2026'>DAE Graduation Show</a> during Dutch Design Week 2026.</p>
+            <p><span class = 'italic'>What Moves the Earth And Other Bodies</span> premiered at the <a href = 'https://ddw.nl/nl/locaties/design-academy-eindhoven-graduation-show-2026'>Design Academy Eindhoven Graduation Show</a> during Dutch Design Week 2026.</p>
         </div>
     </div>
 
@@ -80,8 +78,8 @@ https://caroljpeg.github.io/Andrea_Martinelli/index.html
 
 
 
-    <main id="images">
-        <img class = 'slide active' src = 'media/what-moves-the-earth-and-other-bodies/what-moves-the-earth-and-other-bodies-1.jpeg'>
+    <main id = 'images'>
+        <img class = 'slide' src = 'media/what-moves-the-earth-and-other-bodies/what-moves-the-earth-and-other-bodies-1.jpeg'>
         <img class = 'slide' src = 'media/what-moves-the-earth-and-other-bodies/what-moves-the-earth-and-other-bodies-2.jpeg'>
         <img class = 'slide' src = 'media/what-moves-the-earth-and-other-bodies/what-moves-the-earth-and-other-bodies-4.jpeg'>
         <img class = 'slide' src = 'media/what-moves-the-earth-and-other-bodies/what-moves-the-earth-and-other-bodies-5.jpeg'>
@@ -105,22 +103,6 @@ https://caroljpeg.github.io/Andrea_Martinelli/index.html
         <img class = 'slide' src = 'media/what-moves-the-earth-and-other-bodies/what-moves-the-earth-and-other-bodies-24.jpeg'>
     </main>
 
-    <div id="footer">©2026</div>
-
-    <script>
-        const slides = document.querySelectorAll('.slide');
-        const delay = 2500;
-        let current = 0;
-
-        setInterval(() => {
-            if (document.hidden) return;
-            slides[current].classList.remove('active');
-            // play images in random order
-            // current = Math.floor(Math.random() * slides.length);
-            // play images in sequencial order
-            current = (current + 1) % slides.length;
-            slides[current].classList.add('active');
-        }, delay);
-    </script>
+    <div id = 'footer'>©2026</div>
 </body>
 </html>
