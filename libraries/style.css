@@ -176,18 +176,18 @@ p {
 
 
 #aboutPage {
-  width: 90vw;
+  width: 50vw;
   height: 100vh;
 
   position: fixed;
   top: 0vh;
-  left: 5vw;
+  left: 25vw;
   z-index: 0;
   align-content: center;
   vertical-align: middle;
   overflow-y: scroll;
 
-  font-size: 2vw;
+  font-size: 1vw;
   text-indent: 5vw;
   line-height: 1;
 
@@ -196,6 +196,19 @@ p {
 
 #aboutPage::-webkit-scrollbar {
   display: none;
+}
+
+#where {
+  font-size: 0.75vw;
+  text-indent: 5vw;
+  line-height: 2;
+}
+
+#columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2vw;
+  align-items: start;
 }
 
 
@@ -303,7 +316,25 @@ p {
     font-size: 2vw;
   }
 
+  #columns {
+  display: block;
+  }
+
   #connectorLines path {
   stroke-width: 0.5px;
-}
+  }
+
+  #aboutPage {
+  width: 90vw;
+
+  left: 5vw;
+
+  font-size: 3vw;
+  text-indent: 10vw;
+  }
+
+  #where {
+  font-size: 2vw;
+  text-indent: 10vw;
+  }
 }
